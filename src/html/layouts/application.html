@@ -4,13 +4,29 @@
   <head>
     <meta charset="utf-8">
     <title>{% block title %}{{ title }}{% endblock %}</title>
-    <link rel="stylesheet" href="stylesheets/app.css">
+    <link rel="stylesheet" href="/stylesheets/app.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,900,900i" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% include "shared/app-icons.html" %}
     {% block head %}{% endblock %}
   </head>
   <body>
-    {% block content %}{% endblock %}
+    <header>
+      <nav>
+        <ul class="u-list-inline">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/diary">Diary</a></li>
+          <li><a href="/style">Style</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+    <footer>
+      This is the footer
+    </footer>
     {% block javascript %}
       <script src="javascripts/app.js"></script>
     {% endblock %}
