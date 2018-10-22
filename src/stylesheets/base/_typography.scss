@@ -1,5 +1,3 @@
-$text-color: #2e343b;
-
 html,
 input {
 	line-height: 1.618;
@@ -19,8 +17,8 @@ body {
 }
 
 ::selection {
-    background-color: #d53880;
-    color: white;
+    background-color: $pink;
+    color: $white;
 }
 
 
@@ -31,6 +29,16 @@ h1,h2,h3,h4,h5,h6 {
     margin-bottom: .618em;
     line-height: 1.3;
     margin-top: 1.33em
+}
+h1 {
+	margin-bottom: 1.2em;
+}
+p, ul, ol, dl {
+	margin-top: 0;
+	margin-bottom: 1.6em;
+}
+ul {
+	padding-left: 1.2em;
 }
 
 
@@ -48,11 +56,11 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 a {
-	color: #d53880;
+	color: $link-accent;
 	&:hover {
 		color: white;
-    	background-color: #d53880;
-    	outline: 3px solid #d53880;
+    	background-color: $link-accent;
+    	outline: 3px solid $link-accent;
     	text-decoration: none;
 	}
 	&:focus {
@@ -60,12 +68,11 @@ a {
 		text-decoration: none;
 	}
 	&:active {
-		background-color: #d53880;
-    	outline: 3px solid #d53880;
+		background-color: $link-accent;
+    	outline: 3px solid $link-accent;
     	color: white;
 	}
 }
-
 
 .lead {
 	font-size: 1.2em;
@@ -75,4 +82,18 @@ dfn {
 	&:hover {
 		cursor: pointer;
 	}
+}
+
+
+code {
+	padding: 3px 4px;
+    margin: 0 2px;
+}
+.code {
+	background-color: rgba(0,0,0,1);
+	color: $off-white;
+}
+.code-block {
+	border-radius: 4px;
+	padding: 1em;
 }

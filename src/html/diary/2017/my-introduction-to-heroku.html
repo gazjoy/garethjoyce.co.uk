@@ -1,0 +1,98 @@
+{% extends 'layouts/application.html' %}
+
+{% block content %}
+<h1>My Introduction to Heroku</h1>
+
+<p class="lead">How I deployed an existing node app to Heroku thinking it was a lot harder than it actually was!</p>
+
+<p>So recently I had to push some pre existing HTML prototypes up to Heroku. The prototypes use <a href="https://expressjs.com/" data-href="https://expressjs.com/" class="markup--anchor markup--p-anchor" rel="noopener nofollow" target="_blank">express.js</a> to create a server and generate http routes as well as a <a href="http://thunf.me/swiger/" rel="noopener nofollow" target="_blank">swigjs</a> template engine and <a href="https://gruntjs.com/" data-href="https://gruntjs.com/" rel="noopener nofollow" target="_blank">grunt.js</a> to generate its assets from SASS to CSS. All the tasks and setup were already in place in the prototype application before I began looking at how to deploy it to Heroku.</p>
+
+<p>So firstly I created my own account with Heroku and then I read the excellent getting started guide on the Heroku website. I chose my application server (node.js) and then I went through each of the <a href="https://devcenter.heroku.com/start">steps listed is the guide</a>.</p>
+
+<p>I made some useful notes from the getting started guide to help me familiarise myself with Heroku and the common tasks I thought I would need to do.</p>
+
+<pre class="code code-block">
+// Open app
+$ heroku open
+
+// List running apps
+$ heroku ps
+
+// Turn server off
+$ heroku ps:scale web=0
+
+// Turn server on
+$ heroku ps:scale web=1
+
+// View logs
+$ heroku logs --tail
+
+// Help
+$ heroku help
+</pre>
+
+<p>I then set about getting my own app deployed to Heroku using <code class="code">$ heroku create</code>. By default Heroku will generate a random name for your app, this name is what is used to identify the app in Heroku and also forms the url of your generated app for example https://random-biscuit-monster.herokuapp.com.</p>
+
+<p>I needed a custom app name so created my app as so:</p>
+
+<pre class="code code-block">
+$ heroku create gazjoy
+Creating ⬢ gazjoy... done
+https://gazjoy.herokuapp.com/ | https://git.heroku.com/gazjoy.git
+</pre>
+
+<p>In the background this creates a new git remote called heroku so it was then a case of deploying the app to Heroku.</p>
+
+<pre class="code code-block">
+$ git push heroku master
+</pre>
+
+<p>In your terminal you then see how Heroku runs its tasks to build your app. Your output should look something like mine:</p>
+
+<div><script src="https://gist.github.com/gazjoy/d9cb6bcb53406266572a8860bc32bcad.js"></script></div>
+
+<p>This tells us a few things, firstly Heroku is smart enough to work out what needs to be done. Once a node.js app is detected Heroku knows how to deploy it, just like running your app locally. Secondly it lets us know that the build is being cached. This means further deploys in the future will be quicker and will only install any new modules.</p>
+
+<p>Usefully caching can be disabled if needed by running:</p>
+
+<pre class="code code-block">
+$ heroku config:set NODE_MODULES_CACHE=false
+</pre>
+
+<p>Another thing this console output shows us is whether the build was successful or not, luckily on this occasion mine was! Once successful you can then make sure your app is running by scaling it.</p>
+
+<pre class="code code-block">
+$ heroku ps:scale web=1
+</pre>
+
+
+<h2>Gotchas</h2>
+
+<p>For me it didn’t all go swimmingly first time around. The first problem I had was an error during my first deployment to Heroku. After some Googling of my error I found that by default Heroku runs NPM in production mode. I knew there was an issue locally with my production mode too. Luckily Heroku provides us with a command to disable this.</p>
+
+<pre class="code code-block">
+$ heroku config:set NPM_CONFIG_PRODUCTION=false
+</pre>
+
+<p>This command makes Heroku install anything listed in the <code class="code">“devDependencies”</code> inside your app package.json file. After this I then reset my repository by running.</p>
+
+<pre class="code code-block">
+$ heroku repo:reset
+</pre>
+
+<p>This clears out your remote repo ready for a fresh new deploy. You need a plugin for this though so get it by running.</p>
+
+<pre class="code code-block">
+$ heroku plugins:install heroku-repo
+</pre>
+
+<p>So in my case I was on a local branch called develop, when I deployed my app to Heroku using <code class="code">$ git push heroku master</code> it pushed everything which was on my master branch, unfortunately for me this is not what I wanted as the master branch was out of date quite considerably. So how do we deploy a local branch to a remote Heroku instance? Well I found the perfect git command to do this again on the excellent Heroku documentation centre.</p>
+
+<pre class="code code-block">
+$ git push heroku develop:master
+</pre>
+
+<p>This command is telling git to push your local <code class="code">develop</code> branch to a remote called <code class="code">heroku</code> on the <code class="code">master</code> branch. Once that succeeded I had myself a fully up to date functioning app.</p>
+
+<p>Appy days. 🌈</p>
+{% endblock %}

@@ -1,19 +1,67 @@
+@import "color";
 @import "base/typography";
 
-$off-white: #f7f7f7;
-$text-color: #2e343b;
+@import "logo";
+$border-size: 6px;
+$border-color: $pale-pink;
+
+html,
+body {
+	&::before,
+	&::after {
+		content: "";
+		position: fixed;
+		background-color: $border-color;
+	}
+}
+html {
+	&::before,
+	&::after {
+		height: $border-size;
+	}
+	&::before {
+		top: 0;
+		left: 0;
+		right: 0;
+	}
+	&::after {
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+}
 
 body {
+	margin: 0;
 	background-color: $off-white;
-	margin: 7vw;
+
+	&::before,
+	&::after {
+		width: $border-size;
+	}
+	&::before {
+		top: 0;
+		left: 0;
+		bottom: 0;
+	}
+	&::after {
+		top: 0;
+		bottom: 0;
+		right: 0;
+	}
+}
+
+.container {
+	padding: 7vw;
 	max-width: 78ch;
 	@media (min-width: 58em) {
-		margin: 7vmax;
-		margin-right: 30vw;
+		padding: 7vmax;
+		padding-right: 30vw;
 	}
 	@media (min-width: 90em) {
-		margin-right: 46vw;
+		padding-right: 46vw;
 	}
+	
 }
 
 img {
@@ -23,16 +71,7 @@ img {
 }
 
 footer {
-	border-top: 5px solid white;
-	padding: 1em;
-	background-color: #b3bbd2;
-	background-color:#556;
-	background-image: linear-gradient(30deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
-	linear-gradient(150deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
-	linear-gradient(30deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
-	linear-gradient(150deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
-	linear-gradient(60deg, #99a 25%, transparent 25.5%, transparent 75%, #99a 75%, #99a), 
-	linear-gradient(60deg, #99a 25%, transparent 25.5%, transparent 75%, #99a 75%, #99a);
-	background-size:80px 140px;
-	background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+	margin-top: 4vmax;
+	padding: 1em 0;
+	font-size: 80%;
 }
