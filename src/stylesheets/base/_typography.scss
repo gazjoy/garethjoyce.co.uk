@@ -64,7 +64,7 @@ a {
     	text-decoration: none;
 	}
 	&:focus {
-		outline: 3px solid #ffbf47;
+		outline: 3px solid $focus-accent;
 		text-decoration: none;
 	}
 	&:active {
@@ -90,10 +90,12 @@ code {
     margin: 0 2px;
 }
 .code {
-	background-color: rgba(0,0,0,1);
+	background-color: rgba(0,0,0,0.8);
 	color: $off-white;
+	// white-space: nowrap;
+	border-radius: 3px;
 }
 .code-block {
-	border-radius: 4px;
+	
 	padding: 1em;
 }

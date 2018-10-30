@@ -1,0 +1,80 @@
+{% extends 'layouts/application.html' %}
+
+{% block content %}
+<article class="gj-article">
+	<header class="gj-article__header">
+		<h1>Neat sass breakpoint trick</h1>
+		<p>January 2018</p>
+	</header>
+
+	<p>A few years ago while working at <a href="https://www.iweb.co.uk/">iWeb</a> me and my pal <a href="https://daveredfern.com/">@daveredfern</a> decided to create our own <a href="https://github.com/getchopchop/chopchop">design system</a>. At the time we were ahead of the curve with regard to the trend of these systems, it seems like there is a new one released each and every day. Our system was created to solve a particular in-house problem with inconsistency. We felt the consistency between the front end of the websites being produced was poor. We also had to deal with many WordPress and Magento websites. We knew our system had to handle specific design patterns that these types of websites use, product grids, star rating systems and comment threads for example.</p>
+
+<p>Another goal we set ourselves for the system was to keep the barrier to entry low. This was a particular pet peeve of mine coming from a traditional HTML and CSS authoring background. It feels these days that you have to npm install the world just to get a bit of HTML and CSS to display in a browser. I can now however start to see the benefit of some of these npm packages, namely <a href="https://github.com/postcss/autoprefixer">autoprefixr</a> and <a href="https://www.npmjs.com/package/gulp-sass">gulp-sass</a>. Even so, we didn’t want to bloat out our gulpfile unnecessarily.</p>
+
+
+<p>During the development of our system. We came up with a few nice ways of making our UI developer lives easier when using the system. For the purpose of this article I only want to focus on one of these timesavers, displaying a dynamic sass breakpoint variable in the browser.</p>
+
+<p>This was a particular favourite trick of mine. Sometimes when developing a website using ems as a breakpoint boundary, it can be hard to constantly calculate what screen size you are on. We got around this by using sass to output the breakpoints from dynamic variables right to the browser.</p>
+
+
+<p>This simple technique saved a lot of head scratching and flummoxed faces, here is how.</p>
+
+<h3>Show the breakpoint on the front&nbsp;end</h3>
+<p>Firstly lets look at the sass. We need to set our variables like so:</p>
+
+<pre class="code code-block">
+$screen-sm: 32em;
+$screen-md: 62em;
+$screen-lg: 82em;
+</pre>
+
+<h3>Create some sass to display the breakpoint on the front&nbsp;end</h3>
+
+<p>Now we have some breakpoints let’s write the sass that deals with displaying these breakpoints. We do this using the power of the <em>content</em> property coupled with the sass method to use a dynamic variable.</p>
+
+<pre class="code code-block">
+.output {
+	padding: 5px;
+	background-color: black;
+	colour: white;
+	&amp;::after {
+		content: “#{$screen-sm}”;
+	}
+}
+
+@media (min-width: $screen-sm) {
+	.output::after {
+		content: “#{$screen-sm}”;
+	}
+}
+
+@media (min-width: $screen-md) {
+	.output::after {
+		content: “#{$screen-md}”;
+	}
+}
+
+@media (min-width: $screen-lg) {
+	.output::after {
+		content: “#{$screen-lg}”;
+	}
+}
+</pre>
+
+<h3>Create some HTML to output the breakpoint</h3>
+
+<p>Now we need some HTML on the page to be able to display our dynamic variables.</p>
+
+<pre class="code code-block">
+&lt;div class="output"&gt;BP&lt;/div&gt;
+</pre>
+
+
+<p>Bosh, and we are done. See my code pen for a demo. <a href="https://codepen.io/gazjoy/pen/KZoyZQ">https://codepen.io/gazjoy/pen/KZoyZQ</a></p>
+
+<h4>Going further</h4>
+
+<p>This technique doesn’t just apply to breakpoints any sass variable can be output into the browser this way, supercharging your development workflow and dynamically powering your design system.</p>
+
+</article>
+{% endblock %}

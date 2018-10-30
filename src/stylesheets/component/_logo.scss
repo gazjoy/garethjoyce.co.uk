@@ -8,7 +8,6 @@ $cube-size: 48px;
 .logo {
   display: block;
   position: relative;
-  top: -20px;
   width: $cube-size;
   height: $cube-size;
   perspective: 100px;
@@ -17,7 +16,10 @@ $cube-size: 48px;
   &:hover {
     background-color: transparent;
     outline: none;
-    .cube { transform: translateZ(-$cube-size/2) rotateY(  -90deg); }
+    .cube { transform: translateZ(-$cube-size/2) rotateY(-90deg); }
+  }
+  &:focus {
+    .cube { transform: translateZ(-$cube-size/2) rotateY(-90deg); }
   }
 }
 
@@ -27,7 +29,7 @@ $cube-size: 48px;
   position: relative;
   transform-style: preserve-3d;
   transform: translateZ($cube-size/2);
-  transition: transform 1s ease;
+  transition: transform .7s ease-in-out;
   // animation: 3s infinite alternate twist;
 }
 

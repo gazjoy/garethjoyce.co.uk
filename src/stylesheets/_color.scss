@@ -6,6 +6,42 @@ $pale-pink		: #f5e2eb;
 $border-size	: 6px;
 $border-color	: $pale-pink;
 $link-accent	: $pink;
+$focus-accent	: #ffbf47;
 
 $dark-pink: #981c57;
 $darker-pink: #6b103c;
+
+
+.bg-text-colour {
+	background-color: $text-color;
+	color: $white;
+}
+
+.bg-pink-colour {
+	background-color: $pink;
+	color: $white;
+}
+
+.bg-pale-pink-colour {
+	background-color: $pale-pink;
+}
+
+.bg-dark-pink-colour {
+	background-color: $dark-pink;
+	color: $white;
+}
+
+.bg-darker-pink-colour {
+	background-color: $darker-pink;
+	color: $white;
+}
+
+.bg-focus-colour {
+	background-color: $focus-accent;
+}
+
+[class*="bg-"] {
+	padding: 0.6em 1em;
+	border: 1px solid rgba(0,0,0,0.1);
+	margin-bottom: 1em !important;
+}

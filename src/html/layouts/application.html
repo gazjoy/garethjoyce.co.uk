@@ -11,22 +11,22 @@
     {% block head %}{% endblock %}
   </head>
   <body>
+    <a href="#main-content" class="gj-skip-link">Skip to content</a>
     <div class="container">
-      <header>
+      <header role="banner" class="gj-header">
         {% include "shared/logo.html" %}
-        <nav>
+        <nav class="gj-header__nav">
           <ul class="u-list-inline">
-            <!-- <li><a href="/">Home</a></li> -->
             <li><a href="/about">About</a></li>
             <li><a href="/diary">Diary</a></li>
             <li><a href="/style">Style</a></li>
           </ul>
         </nav>
       </header>
-      <main>
+      <main role="main" id="main-content">
         {% block content %}{% endblock %}
       </main>
-      <footer>
+      <footer role="contentinfo" class="gj-footer">
         <p>© Gaz Joyce – <a href="mailto:post@garethjoyce.co.uk">post@garethjoyce.co.uk</a> – <a href="https://www.twitter.com/gazjoy">@gazjoy</a></p>
       </footer>
     </div>
