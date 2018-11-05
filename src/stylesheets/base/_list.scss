@@ -1,0 +1,13 @@
+[class*=u-list-] {
+	padding-left: 0;
+	list-style: none;
+}
+
+.u-list-inline {
+	list-style: none;
+	> * {
+		display: inline-block;
+    	margin-right: 1em;
+    	margin-bottom: 0;
+	}
+}

@@ -1,4 +1,7 @@
 $cube-size: 48px;
+$cube-left-color: color(primary, pink);
+$cube-front-color: color(primary, dark-pink);
+$cube-right-color: color(primary, darker-pink);
 
 .logo,
 .logo * {
@@ -51,10 +54,10 @@ $cube-size: 48px;
   text-align: center;
 }
 
-.cube__face--front  { background: $dark-pink; }
-.cube__face--right  { background: $darker-pink; }
+.cube__face--front  { background: $cube-front-color; }
+.cube__face--right  { background: $cube-right-color; }
 .cube__face--back   { background: hsla(120, 100%, 50%, 1); }
-.cube__face--left   { background: $pink; }
+.cube__face--left   { background: $cube-left-color; }
 .cube__face--top    { background: hsla(240, 100%, 50%, 1); }
 .cube__face--bottom { background: hsla(300, 100%, 50%, 1); }
 

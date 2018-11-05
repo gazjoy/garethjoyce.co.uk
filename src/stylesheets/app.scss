@@ -1,12 +1,15 @@
 // Constants
 @import "const";
-@import "color";
+// @import "color";
 
 // Helpers
 @import "helper/functions";
 @import "helper/breakpoint";
 
 // Base
+@import "base/heading";
+@import "base/horizontal-rule";
+@import "base/list";
 @import "base/typography";
 
 // Components
@@ -16,8 +19,11 @@
 @import "component/footer";
 @import "component/article";
 
+// Utility
+@import "utility/color";
+
 $border-size: 10px;
-$border-color: $pale-pink;
+$border-color: color(primary, light-pink);
 
 html,
 body {
@@ -70,14 +76,11 @@ body {
 }
 
 .container {
-	padding: 7vw;
-	max-width: 78ch;
-	@include breakpoint (screen(md)) {
-		padding: 7vmax;
-		padding-right: 30vw;
-	}
-	@include breakpoint (screen(lg)) {
-		padding-right: 46vw;
+	padding: 8vw;
+	max-width: 64ch;
+	@include breakpoint (screen(xl)) {
+		padding-top: 3vmax;
+		padding-bottom: 3vmax;
 	}
 }
 

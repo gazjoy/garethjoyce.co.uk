@@ -1,7 +1,7 @@
 {% extends 'layouts/application.html' %}
 
 {% block content %}
-  <h1 data-module="example">Stylish</h1>
+  <h1>Style guide</h1>
 
   <h2>Built with</h2>
   <p>This site is built with <a href="https://github.com/vigetlabs/blendid">Blendid</a> static site generator and deployed to <a href="https://www.netlify.com/">Netlify</a> with a <a href="https://www.netlify.com/docs/webhooks/">build hook</a> after each push to its <a href="https://github.com/gazjoy/garethjoyce.co.uk">GitHub repository</a>.</p>
@@ -9,23 +9,28 @@
 https://github.com/gazjoy/garethjoyce.co.uk.git
 </pre>
 
+	<hr>
 	<h2>Font</h2>
 	<p><a href="https://fonts.google.com/specimen/Lato">Lato</a> by Łukasz Dziedzic for Google Fonts</p>
 
+<hr>
+	<h2>Logo</h2>
+	{% include "shared/logo.html" %}
+	<hr>
 	<h2>Colours</h2>
 	<ul class="u-list-inline">
-		<li class="bg-pale-pink-colour">Pale pink #f5e2eb</li>
-		<li class="bg-pink-colour">Pink #d53880</li>
-		<li class="bg-dark-pink-colour">Dark pink #d53880</li>
-		<li class="bg-darker-pink-colour">Darkest pink #d53880</li>
-		<li class="bg-pale-grey-colour">Pale grey #f7f7f7</li>
-		<li class="bg-text-colour">Text #2e343b</li>
-		<li class="bg-focus-colour">Focus #ffbf47</li>
+		<li class="u-fill-primary-light-pink">Light pink #f5e2eb</li>
+		<li class="u-fill-primary-pink u-text-neutral-white">Pink #d53880</li>
+		<li class="u-fill-primary-dark-pink u-text-neutral-white">Dark pink #d53880</li>
+		<li class="u-fill-primary-darker-pink u-text-neutral-white">Darkest pink #d53880</li>
+		<li class="u-fill-neutral-lightest">Pale grey #f7f7f7</li>
+		<li class="u-fill-neutral-darkest u-text-neutral-white">Text #2e343b</li>
+		<li class="u-fill-primary-focus">Focus #ffbf47</li>
 	</ul>
 
 	<hr>
 
-	<h2>Typography</h2>
+	<h2>Heading</h2>
 	<p class="h1">Page heading (h1)</p>
 	<p class="h2">Page heading (h2)</p>
 	<p class="h3">Page heading (h3)</p>
@@ -33,13 +38,29 @@ https://github.com/gazjoy/garethjoyce.co.uk.git
 	<p class="h5">Page heading (h5)</p>
 	<p class="h6">Page heading (h6)</p>
 
+<hr>
+
+	<h3>Blockquote</h3>
+	<blockquote>
+		<p>After every nights writing I would read what I had written and I would criticise it, “who would want to read this tut”, I would think to myself, delete my article and go to bed frustrated.</p>
+		<footer>
+			<cite><a href="/diary/2017/on-writing-shit.html">On Writing 💩</a></cite>
+		</footer>
+	</blockquote>
+
+	<hr>
+
 	<h2>Symbols</h2>
 
 	<hr>
 
 	<h2>Images</h2>
 
+	<hr>
+
 	<h2>SVGs</h2>
+
+	<hr>
 
 	<h2>Icons</h2>
 
