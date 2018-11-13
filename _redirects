@@ -1,2 +1,0 @@
-# Redirect default Netlify subdomain to primary domain
-http://hungry-elion-b909e1.netlify.com/* http://www.garethjoyce.co.uk/:splat 301!
