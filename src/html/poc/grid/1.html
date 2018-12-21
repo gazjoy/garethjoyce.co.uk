@@ -1,0 +1,39 @@
+{% extends 'layouts/shell.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="/stylesheets/grid1.css">
+{% endblock %}
+
+{% block title %}
+CSS Grid 1 – Gaz Joyce
+{% endblock %}
+
+{% block content %}
+
+<div class="grid">
+
+	<header>
+		<img alt="Image of a building divided into a grid" src="/images/screens/lance-anderson-211156-unsplash.jpg" />
+	</header>
+	<main>
+		<section>
+			<h1>Super big and impactful heading</h1>
+		</section>
+		<section class="two-up">
+			<div class="tile">
+				<h2>Web design</h2>
+				<p>This that <em>and</em> the other</p>
+				<a href="#">Engage</a>
+			</div>
+			<div class="tile">
+				<h2>Web development</h2>
+				<p>This that <em>and</em> the other</p>
+				<a href="#">Engage</a>
+			</div>
+		</section>
+	</main>
+	<footer>Footer</footer>
+
+</div>
+
+{% endblock %}
