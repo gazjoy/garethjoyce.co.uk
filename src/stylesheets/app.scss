@@ -12,6 +12,7 @@
 @import "base/frame";
 @import "base/heading";
 @import "base/horizontal-rule";
+@import "base/image";
 @import "base/list";
 @import "base/typography";
 
@@ -24,6 +25,8 @@
 
 // Utility
 @import "utility/color";
+@import "utility/image";
+@import "utility/separator";
 
 
 
@@ -34,12 +37,6 @@
 		padding-top: 3vmax;
 		padding-bottom: 3vmax;
 	}
-}
-
-img {
-	display: block;
-    max-width: 100%;
-    height: auto;
 }
 
 
