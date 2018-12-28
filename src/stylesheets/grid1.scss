@@ -35,7 +35,7 @@ figure {
 	}
 
 	&__image-container {
-		grid-column: 1/4;
+		grid-column: 1/-1;
 	  grid-row: 1/2;
 	  height: 100%;
 	  max-width: 100%;
@@ -67,10 +67,7 @@ figure {
 	&__header {
 		align-self: end;
     grid-row: 1/2;
-    grid-column: 2/4;
-    // @include breakpoint(max-width screen(sm, max)) {
-    // 	position: relative;
-    // }
+    grid-column: 2/-1;
     @include breakpoint(screen(md)) {
     	border-top: 5px solid color(primary, pink);
     }

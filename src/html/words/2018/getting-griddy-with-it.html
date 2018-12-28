@@ -16,7 +16,7 @@ Getting griddy with it – Gaz Joyce
 	</figure>
 	<div class="article__header">
 		<a href="#" class="back-link">&larr; Back</a>
-		<time class="article__meta">December 2018</time>
+		<time class="article__meta">January 2019</time>
 		<div class="article__credit">
 			<span class="article__credit-label">Image by</span>
 			<a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@rawpixel?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from rawpixel">
@@ -47,9 +47,9 @@ Getting griddy with it – Gaz Joyce
 	&lt;/div&gt;
 &lt;/article&gt;</code></pre>
 
-		<p>The grid layout for this page kicks in at 768px. Anything narrower than that breakpoint will see a simple stacked layout. Anything above 768px will get the grid layout. The entire wrapper for this article gets set to <code>display: grid;</code>. I am splitting my grid into 3 parts, a main centre column and two remaining parts on the left and right of the screen. I have set the main column to be a maximum width of <code>72ch</code> using the <code>ch</code> unit. The browser doesn't count the number of characters on any given line, its value is equal to the width of the 0 (zero) character. <a href="https://meyerweb.com/eric/thoughts/2018/06/28/what-is-the-css-ch-unit/">Read more about the ch unit</a>.</p>
+		<p>The grid layout for this page kicks in at 768px. Anything narrower than that breakpoint will see a simple stacked layout. Anything above 768px will get the grid layout. The entire wrapper for this article gets set to <code>display: grid;</code>. I am splitting my grid into 3 parts, a main centre column and two remaining parts on the left and right of the screen. I have set the main column to be a maximum width of <code>72ch</code> using the <code>ch</code> unit. When using the ch unit, it is important to remember that the browser doesn't count the number of characters on any given line, its value is equal to the width of the 0 (zero) character. <a href="https://meyerweb.com/eric/thoughts/2018/06/28/what-is-the-css-ch-unit/">Read more about the ch unit</a>.</p>
 
-		<h2>Pouring in some content</h2>
+		<h3>Pouring in some content</h3>
 		<p>Next I started to add in my content, choosing a <a href="https://unsplash.com/photos/frIlOrNP_Z4">nice pink tile image from Unsplash</a>. I gave my image a class to hook into for styling later. I then dropped in my title and article date information.</p>
 		<p>My articles tend to be quite organic and change as I write and even after I have published them. I planned to add in the content as I went along so at this point my HTML looked like the following, ready to be styled up.</p>
 <pre><code class="language-markup">&lt;article class="article"&gt;
@@ -66,14 +66,60 @@ Getting griddy with it – Gaz Joyce
 &lt;/article&gt;
 </code></pre>
 
+<hr>
 
-		<h2>Write some CSS</h2>
-<pre><code class="language-css">
-.css {
-	yep: nope;
+		<h2>Creating a grid container</h2>
+		<p>As previously mentioned all the grid action happens when there is enough available space on the screen to play around with the layout. The first thing I am doing is setting the article class to be a grid container. Then I want to add in my columns, the center column being as wide as 72ch.</p>
+<pre><code class="language-css">.article {
+  display: grid;
+  grid-template-columns: 1fr minmax(auto, 72ch) 4fr;
+  grid-template-rows: 100vh auto;
 }
 </code></pre>
+		<p>Doing this gives me a few new features associated with CSS grid to digest. The value of <code>grid</code> is a new value that can be used with the <code>display</code> property. It defines a grid container. We are saying that every direct child of this container is an item in the grid and therefore can have grid properties defined on it.</p>
 
+		<h3>grid-template-columns</h3>
+		<p>This new CSS property allows us to define how many columns there are in our grid. Columns run left to right across the screen on the X axis. In my example there are 3 columns. If you wish you can also name the grid rows and columns. By default the browser will number them and it is these numbers we use later to position the grid items onto the grid.</p>
+		
+		<h3>grid-template-rows</h3>
+		<p>This new CSS property works the same way as grid-template-columns except rows run top to bottom across the screen on the Y axis. My example has 2 rows. The first row uses the <code>vh</code> (viewport height) unit. I am essentially saying that I want my first row which in this case is my image to fill 100% of the viewports height. The second row will be as tall as its content (auto).</p>
+
+		<h3>The fr unit</h3>
+		<p>The fr unit is a fraction unit, <code>1fr</code> is 1 part of the available space. The available space is calculated by the browser <em>after</em> any other measurement is calculated. So in my example the browser first calculates the main column, here using the <code>minmax()</code> function. Once this has been calculated the browser splits the remaining space into 1 part on the left and 4 parts on the right of the main column.</p>
+
+<hr>
+
+		<h2>Grid item placement</h2>
+		<p>Now I have my grid container, it is time to place the items within it. Firstly I want my main image to have a bit of impact so I want it to fill the width and height of the viewport. The image is already within a containing element.</p>
+
+<pre><code class="language-css">.article__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+}
+</code></pre>
+		<p>This CSS isn't recent or related to CSS grid but it is worth noting the <code>object-fit</code> property when it comes to CSS grid. This CSS property behaves similarly to the <code>background-size</code> property which is used when applying an image as a background to an element. It allows designers to apply the same logic directly to elements within the DOM such as <code>&lt;img&gt;</code> or <code>&lt;video&gt;</code>. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit">Read more about object-fit</a>.</p>
+
+		<p>Now my image will always proportionately scale with its parent container. I can now place the parent container on the grid.</p>
+
+<pre><code class="language-css">.article__image-container {
+  	grid-column: 1/-1;
+	  grid-row: 1/2;
+	  height: 100%;
+	  max-width: 100%;
+}
+</code></pre>
+<hr>
+
+		<h2>Wrapping up</h2>
+		<p>As I originally mentioned CSS Grid is huge, I tried to keep this article relatively short and only include enough know how to get going with and I already feel that I could have split it up further.</p>
+		<p>Something that really helped me when picturing a grid layout is to draw it out on a whiteboard. This way you can design your layouts first without getting too bogged down in the code.</p>
+
+<hr>
+		<h3>Kudos</h3>
+		<p>Huge thanks to <a href="https://codepen.io/brendamarienyc/pen/BRyQzg">Brenda Storer</a> for the inspiration for this layout and to <a href="https://gridbyexample.com">Rachel Andrew</a> for her high quality CSS grid resources.</p>
 		<p class="lead">Fin 🏁</p>
 	</div>
 </article>
