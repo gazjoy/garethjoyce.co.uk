@@ -1,4 +1,7 @@
-@import "base/normalize";
+// Normalize
+@import "node_modules/normalize.css/normalize";
+// Prism
+@import "node_modules/prismjs/themes/prism-tomorrow";
 
 // Constants
 @import "const";
@@ -53,3 +56,9 @@
 .hero { font-weight: 900; }
 .blurb { font-weight: 690; }
 
+// Prism overrides
+code[class*="language-"],
+pre[class*="language-"] {
+	margin-top: 0;
+	margin-bottom: 1.6em;
+}

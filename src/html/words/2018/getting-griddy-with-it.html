@@ -6,29 +6,75 @@
 {% endblock %}
 
 {% block title %}
-CSS Grid 1 – Gaz Joyce
+Getting griddy with it – Gaz Joyce
 {% endblock %}
 
 {% block content %}
-<section class="article">
+<article class="article">
 	<figure class="article__image-container">
 		<img alt="Image of a building divided into a grid" src="/images/screens/rawpixel-539830-unsplash.jpg" class="article__image u-img-responsive" />
 	</figure>
 	<div class="article__header">
+		<a href="#" class="back-link">&larr; Back</a>
 		<time class="article__meta">December 2018</time>
-		<a class="article__credit" style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@rawpixel?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from rawpixel">
-			<span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="display:inline-block;padding:2px 3px">rawpixel</span>
-		</a>
+		<div class="article__credit">
+			<span class="article__credit-label">Image by</span>
+			<a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@rawpixel?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from rawpixel">
+				<span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="display:inline-block;padding:2px 3px">rawpixel</span>
+			</a>
+		</div>
 		<h1 class="article__title">Getting griddy with it</h1>
 	</div>
 	<div class="article__content">
-		<p>So after a few failed attempts I recently decided to revisit CSS Grid. I find it difficult to learn anything without having a practical
+		<p>After a few failed attempts I recently decided to revisit CSS Grid. I find it difficult to learn anything without having a practical
 			use cases to get my head into. In order to have a practical use case I need to be working on a project which has the flexibility to experiment with some of the modern CSS properties. I just haven't had that recently being assigned to a Government project which has
 		constraints around branding and styling.</p>
 		<p>To mitigate this, I decided to experiment with my own website. So that is what you are seeing here. An article within an
-		experiment, how very meta.</p>
+		experiment, how very meta. What I have realised is that CSS Grid is huge, I am not going to be able to learn the lot in one sitting. So I need a plan to learn chunk by chunk. I thought I would start off as simple as I could.</p>
+
+		<h2>Create the markup</h2>
+		<p>Firstly I put together the markup for my article, breaking it into a masthead image, a header which would contain my article title and meta information and a main body section for the article content.</p>
+
+<pre><code class="language-markup">&lt;article class="article"&gt;
+	&lt;figure class="article__image-container"&gt;
+		&lt;!-- image to add --&gt;
+	&lt;/figure&gt;
+	&lt;div class="article__header"&gt;
+		&lt;!-- header to add --&gt;
+	&lt;/div&gt;
+	&lt;div class="article__content"&gt;
+		&lt;!-- content to add --&gt;
+	&lt;/div&gt;
+&lt;/article&gt;</code></pre>
+
+		<p>The grid layout for this page kicks in at 768px. Anything narrower than that breakpoint will see a simple stacked layout. Anything above 768px will get the grid layout. The entire wrapper for this article gets set to <code>display: grid;</code>. I am splitting my grid into 3 parts, a main centre column and two remaining parts on the left and right of the screen. I have set the main column to be a maximum width of <code>72ch</code> using the <code>ch</code> unit. The browser doesn't count the number of characters on any given line, its value is equal to the width of the 0 (zero) character. <a href="https://meyerweb.com/eric/thoughts/2018/06/28/what-is-the-css-ch-unit/">Read more about the ch unit</a>.</p>
+
+		<h2>Pouring in some content</h2>
+		<p>Next I started to add in my content, choosing a <a href="https://unsplash.com/photos/frIlOrNP_Z4">nice pink tile image from Unsplash</a>. I gave my image a class to hook into for styling later. I then dropped in my title and article date information.</p>
+		<p>My articles tend to be quite organic and change as I write and even after I have published them. I planned to add in the content as I went along so at this point my HTML looked like the following, ready to be styled up.</p>
+<pre><code class="language-markup">&lt;article class="article"&gt;
+	&lt;figure class="article__image-container"&gt;
+		&lt;img alt="Image of a building divided into a grid" src="/images/screens/rawpixel-539830-unsplash.jpg" class="article__image u-img-responsive" /&gt;
+	&lt;/figure&gt;
+	&lt;div class="article__header"&gt;
+		&lt;time class="article__meta"&gt;December 2018&lt;/time&gt;
+		&lt;h1 class="article__title"&gt;Getting griddy with it&lt;/h1&gt;
+	&lt;/div&gt;
+	&lt;div class="article__content"&gt;
+		&lt;!-- content to add --&gt;
+	&lt;/div&gt;
+&lt;/article&gt;
+</code></pre>
+
+
+		<h2>Write some CSS</h2>
+<pre><code class="language-css">
+.css {
+	yep: nope;
+}
+</code></pre>
 
 		<p class="lead">Fin 🏁</p>
 	</div>
-</section>
+</article>
 {% endblock %}

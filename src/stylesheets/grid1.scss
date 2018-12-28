@@ -6,7 +6,7 @@
 @import "helper/functions";
 @import "helper/breakpoint";
 
-$center-column-width: 73ch;
+$center-column-width: 72ch;
 $center-column-padding: 2.5rem;
 
 figure {
@@ -15,18 +15,24 @@ figure {
 }
 
 .article {
-  grid-template-columns: 1fr minmax(auto, $center-column-width) 1fr;
+  grid-template-columns: 1fr minmax(auto, $center-column-width) 4fr;
   grid-template-rows: 100vh auto;
 
 	@include breakpoint(screen(md)) {
 		display: grid;
 	}
 
-	// &__credit {
-	// 	position: absolute;
-	// 	top: 3rem;
-	// 	right: 3rem;
-	// }
+	&__credit {
+		position: absolute;
+		top: 2rem;
+		right: 2rem;
+	}
+
+	&__credit-label {
+		display: inline-block;
+		margin-right: spacing(xs);
+		font-size: 0.65rem;
+	}
 
 	&__image-container {
 		grid-column: 1/4;
@@ -62,9 +68,9 @@ figure {
 		align-self: end;
     grid-row: 1/2;
     grid-column: 2/4;
-    @include breakpoint(max-width screen(sm, max)) {
-    	position: relative;
-    }
+    // @include breakpoint(max-width screen(sm, max)) {
+    // 	position: relative;
+    // }
     @include breakpoint(screen(md)) {
     	border-top: 5px solid color(primary, pink);
     }
@@ -74,6 +80,13 @@ figure {
 		grid-row: 2/3;
     grid-column: 2/3;
     padding-top: 0;
+    @include breakpoint(screen(md)) {
+    	border-right: 5px solid color(primary, pink); 
+    }
+
+    p::first-letter {
+  		initial-letter: 2;
+		}
 	}
 
 	&__title {
