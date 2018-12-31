@@ -16,6 +16,7 @@
 
   @include breakpoint(screen(sm)) {
 		position: absolute;
+    z-index: 11;
   }
 
   &:active,

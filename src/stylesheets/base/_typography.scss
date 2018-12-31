@@ -74,8 +74,9 @@ dfn {
 
 
 code {
-	padding: 3px 4px;
-    margin: 0 2px;
+    font-size: 87.5%;
+    color: $link-accent;
+    word-break: break-word;
 }
 
 .code {

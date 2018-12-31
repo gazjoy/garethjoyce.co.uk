@@ -62,3 +62,41 @@ pre[class*="language-"] {
 	margin-top: 0;
 	margin-bottom: 1.6em;
 }
+
+
+.has-grid-article {
+	.container {
+		padding: 0;
+		max-width: none;
+		@include breakpoint(screen(md)) {
+			display: grid;
+		}
+	}
+
+	.gj-header {
+		grid-column: 1 / -1;
+		grid-row: 1 / 2;
+		align-self: flex-start;
+		padding: 8vw 8vw 0 8vw;
+		border-bottom: 5px solid color(primary, darker-pink);
+		margin-bottom: 0;
+		padding-bottom: 2em;
+
+		@include breakpoint(screen(md)) {
+			position: relative;
+			padding: 1em;
+			background-color: color(neutral, white);
+			margin: 8vw 0 0 8vw;
+			padding: 1em;
+		}
+	}
+
+	main {
+		grid-column: 1 / -1;
+		grid-row: 1 / 2;
+	}
+
+	.gj-footer {
+		padding-left: 8vw;
+	}
+}

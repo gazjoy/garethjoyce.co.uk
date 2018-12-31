@@ -1,39 +1,33 @@
-{% extends 'layouts/shell.html' %}
+{% extends 'layouts/application.html' %}
 
 {% block head %}
 {{ super() }}
-<link rel="stylesheet" href="/stylesheets/grid1.css">
+<link rel="stylesheet" href="/stylesheets/grid-article.css">
 {% endblock %}
 
 {% block title %}
 Getting griddy with it – Gaz Joyce
 {% endblock %}
 
+{% set bodyClasses = 'has-grid-article' %}
+
 {% block content %}
 <article class="article">
 	<figure class="article__image-container">
-		<img alt="Image of a building divided into a grid" src="/images/screens/rawpixel-539830-unsplash.jpg" class="article__image u-img-responsive" />
+		<img alt="Image of a container yard showing hundreds of shipping containers" src="/images/screens/chuttersnap-458795-unsplash.jpg" class="article__image u-img-responsive" />
 	</figure>
 	<div class="article__header">
-		<a href="#" class="back-link">&larr; Back</a>
-		<time class="article__meta">January 2019</time>
-		<div class="article__credit">
-			<span class="article__credit-label">Image by</span>
-			<a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@rawpixel?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from rawpixel">
-				<span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="display:inline-block;padding:2px 3px">rawpixel</span>
-			</a>
-		</div>
+		<time class="article__meta">December 2019</time>
 		<h1 class="article__title">Getting griddy with it</h1>
 	</div>
 	<div class="article__content">
-		<p>After a few failed attempts I recently decided to revisit CSS Grid. I find it difficult to learn anything without having a practical
-			use cases to get my head into. In order to have a practical use case I need to be working on a project which has the flexibility to experiment with some of the modern CSS properties. I just haven't had that recently being assigned to a Government project which has
-		constraints around branding and styling.</p>
-		<p>To mitigate this, I decided to experiment with my own website. So that is what you are seeing here. An article within an
-		experiment, how very meta. What I have realised is that CSS Grid is huge, I am not going to be able to learn the lot in one sitting. So I need a plan to learn chunk by chunk. I thought I would start off as simple as I could.</p>
+		<p>One of the best things about working for <a href="https://www.valtech.com/en-gb/career/">Valtech</a> is bench time. This is time between projects where consultants get the opportunity to learn, assist with sales pitches or write an article. Bench time gives me the opportunity to revisit CSS Grid after a few failed attempts to learn the basics.</p>
+		<p>I find it difficult to learn anything without having a practical use cases to get my head into. In order to have a practical use case I need to be working on a project which has the flexibility to experiment with some of the modern CSS properties. So I decided to experiment with my own website. I am going to make this my playground to learn and write. So that is what you are seeing here, an article within an experiment, how very meta. Feel free to inspect the page. What I have realised is that CSS Grid is huge, I am not going to be able to learn the lot in one sitting. I am starting off with <a href="https://codepen.io/brendamarienyc/pen/BRyQzg">this great codepen</a> from Brenda Storer. My plan being to recreate this CodePen and step through the code and understand each part as I do so.</p>
 
-		<h2>Create the markup</h2>
-		<p>Firstly I put together the markup for my article, breaking it into a masthead image, a header which would contain my article title and meta information and a main body section for the article content.</p>
+		<hr>
+
+		<h2>Containers and items</h2>
+		<p>CSS Grid is all about creating containers and placing items into the containers. Before I crack on with styling up the CSS I need some HTML markup to play with. Firstly we need to put together the markup for the article, breaking it into a masthead image, a header which would contain the article title and meta information and a main body section for the article content.</p>
 
 <pre><code class="language-markup">&lt;article class="article"&gt;
 	&lt;figure class="article__image-container"&gt;
@@ -47,11 +41,11 @@ Getting griddy with it – Gaz Joyce
 	&lt;/div&gt;
 &lt;/article&gt;</code></pre>
 
-		<p>The grid layout for this page kicks in at 768px. Anything narrower than that breakpoint will see a simple stacked layout. Anything above 768px will get the grid layout. The entire wrapper for this article gets set to <code>display: grid;</code>. I am splitting my grid into 3 parts, a main centre column and two remaining parts on the left and right of the screen. I have set the main column to be a maximum width of <code>72ch</code> using the <code>ch</code> unit. When using the ch unit, it is important to remember that the browser doesn't count the number of characters on any given line, its value is equal to the width of the 0 (zero) character. <a href="https://meyerweb.com/eric/thoughts/2018/06/28/what-is-the-css-ch-unit/">Read more about the ch unit</a>.</p>
+		<p>The grid layout for this page kicks in at 768px. Anything narrower than that breakpoint will see a simple stacked layout. Anything above 768px will get the grid layout. The entire wrapper for this article gets set to <code>display: grid;</code>. We split the grid into 3 parts, a main centre column and two remaining parts on the left and right of the screen. The main column is set to be a maximum width of <code>72ch</code> using the <code>ch</code> unit. When using the ch unit, it is important to remember that the browser doesn't count the number of characters on any given line, its value is equal to the width of the 0 (zero) character. <a href="https://meyerweb.com/eric/thoughts/2018/06/28/what-is-the-css-ch-unit/">Read more about the ch unit</a>.</p>
 
 		<h3>Pouring in some content</h3>
-		<p>Next I started to add in my content, choosing a <a href="https://unsplash.com/photos/frIlOrNP_Z4">nice pink tile image from Unsplash</a>. I gave my image a class to hook into for styling later. I then dropped in my title and article date information.</p>
-		<p>My articles tend to be quite organic and change as I write and even after I have published them. I planned to add in the content as I went along so at this point my HTML looked like the following, ready to be styled up.</p>
+		<p>Next we need to add in the content, choosing a beautifully tenuous <a href="https://unsplash.com/photos/xewrfLD8emE">container image from Unsplash</a>. We give the image a class to hook into for later styling. Then drop in the title and article date information.</p>
+		<p>My articles tend to be quite organic and change as I write and even after I have published them. I planned to add in the content as I went along so at this point the HTML looked like the following, ready to be styled up.</p>
 <pre><code class="language-markup">&lt;article class="article"&gt;
 	&lt;figure class="article__image-container"&gt;
 		&lt;img alt="Image of a building divided into a grid" src="/images/screens/rawpixel-539830-unsplash.jpg" class="article__image u-img-responsive" /&gt;
@@ -69,28 +63,31 @@ Getting griddy with it – Gaz Joyce
 <hr>
 
 		<h2>Creating a grid container</h2>
-		<p>As previously mentioned all the grid action happens when there is enough available space on the screen to play around with the layout. The first thing I am doing is setting the article class to be a grid container. Then I want to add in my columns, the center column being as wide as 72ch.</p>
+		<p>As previously mentioned all the grid action happens when there is enough available space on the screen to play around with the layout. The first thing I am doing is setting the article class to be a grid container. Then we'll want to add in the columns, the center column being as wide as 72ch.</p>
 <pre><code class="language-css">.article {
   display: grid;
   grid-template-columns: 1fr minmax(auto, 72ch) 4fr;
   grid-template-rows: 100vh auto;
 }
 </code></pre>
-		<p>Doing this gives me a few new features associated with CSS grid to digest. The value of <code>grid</code> is a new value that can be used with the <code>display</code> property. It defines a grid container. We are saying that every direct child of this container is an item in the grid and therefore can have grid properties defined on it.</p>
+		<p>Doing this gives us a few new features associated with CSS grid to digest. The value of <code>grid</code> is a new value that can be used with the <code>display</code> property. It defines a grid container. We are saying that every direct child of this container is an item in the grid and therefore can have grid properties defined on it.</p>
 
-		<h3>grid-template-columns</h3>
-		<p>This new CSS property allows us to define how many columns there are in our grid. Columns run left to right across the screen on the X axis. In my example there are 3 columns. If you wish you can also name the grid rows and columns. By default the browser will number them and it is these numbers we use later to position the grid items onto the grid.</p>
+		<h3>Using <code>grid-template-columns</code></h3>
+		<p>This new CSS property allows us to define how many columns there are in the grid. Columns run left to right across the screen on the X axis. In the example there are 3 columns. If you wish you can also name the grid rows and columns. By default the browser will number them and it is these numbers we use later to position the grid items onto the grid.</p>
 		
-		<h3>grid-template-rows</h3>
-		<p>This new CSS property works the same way as grid-template-columns except rows run top to bottom across the screen on the Y axis. My example has 2 rows. The first row uses the <code>vh</code> (viewport height) unit. I am essentially saying that I want my first row which in this case is my image to fill 100% of the viewports height. The second row will be as tall as its content (auto).</p>
+		<h3>Using <code>grid-template-rows</code></h3>
+		<p>This new CSS property works the same way as grid-template-columns except rows run top to bottom across the screen on the Y axis. The example has 2 rows. The first row uses the <code>vh</code> (viewport height) unit. Here, we are essentially saying that we want the first row which in this case is the image to fill 100% of the viewports height. The second row will be as tall as its content (auto).</p>
 
 		<h3>The fr unit</h3>
-		<p>The fr unit is a fraction unit, <code>1fr</code> is 1 part of the available space. The available space is calculated by the browser <em>after</em> any other measurement is calculated. So in my example the browser first calculates the main column, here using the <code>minmax()</code> function. Once this has been calculated the browser splits the remaining space into 1 part on the left and 4 parts on the right of the main column.</p>
+		<p>The fr unit is a fraction unit, <code>1fr</code> is 1 part of the available space. The available space is calculated by the browser <em>after</em> any other measurement is calculated. So in the example the browser first calculates the main column, here using the <code>minmax()</code> function. Once this has been calculated the browser splits the remaining space into 1 part on the left and 4 parts on the right of the main column.</p>
+
+		<h3>Using <code>minmax()</code></h3>
+			<p>The <code>minmax()</code> function. It takes 2 values, the minimum size of a row or column and the maximum size. In our example the minimum size is auto, this means the smallest the column can get is whatever is defined by its content. The maximum size in our example is <code>72ch</code>. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/minmax">Read more about the minmax() function</a>.</p>
 
 <hr>
 
 		<h2>Grid item placement</h2>
-		<p>Now I have my grid container, it is time to place the items within it. Firstly I want my main image to have a bit of impact so I want it to fill the width and height of the viewport. The image is already within a containing element.</p>
+		<p>Now we have a grid container, it is time to place the items within it. Firstly we want the main image to have a bit of impact so we want it to fill the width and height of the viewport. The image is already within a containing element.</p>
 
 <pre><code class="language-css">.article__image {
   display: block;
@@ -102,24 +99,57 @@ Getting griddy with it – Gaz Joyce
 </code></pre>
 		<p>This CSS isn't recent or related to CSS grid but it is worth noting the <code>object-fit</code> property when it comes to CSS grid. This CSS property behaves similarly to the <code>background-size</code> property which is used when applying an image as a background to an element. It allows designers to apply the same logic directly to elements within the DOM such as <code>&lt;img&gt;</code> or <code>&lt;video&gt;</code>. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit">Read more about object-fit</a>.</p>
 
-		<p>Now my image will always proportionately scale with its parent container. I can now place the parent container on the grid.</p>
+		<p>Now the image will always proportionately scale with its parent container. We can now place the parent container on the grid.</p>
 
 <pre><code class="language-css">.article__image-container {
-  	grid-column: 1/-1;
-	  grid-row: 1/2;
-	  height: 100%;
-	  max-width: 100%;
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+  height: 100%;
+  max-width: 100%;
 }
 </code></pre>
+	
+		<p>So this snippet of CSS gives us a few more new properties to look into, namely <code>grid-column</code> and <code>grid-row</code>.</p>
+
+		<h3>Using <code>grid-column</code></h3>
+		<p>This property is shorthand for <code>grid-column-start</code> and <code>grid-column-end</code>. It works across the X axis. Here we are declaring both grid line values in the <code>grid-column</code> shorthand declaration. The / (slash) character splits the start and end values. As we already know from using <code>grid-template-columns</code>, the browser will number the grid lines (columns and rows) by default. So <code>grid-column: 1 / -1;</code> is telling the browser that this column will start on the first column and end on the -1 column. When we declare negative integers the browser counts in reverse. In our case from the right of the container. So we know this grid item will be placed to fill the full width of the parent grid container. The grid lines can also be named and referenced in the same way. <a href="https://gridbyexample.com/examples/example8/">See Rachel Andrew's great demos for more on this</a>.</p>
+
+		<h3>Using <code>grid-row</code></h3>
+		<p>This property works in much the same way as <code>grid-column</code> but works accross the Y axis. In the example we are telling the browser that this item will start on the first row and end on the second row.</p>
+
+		<h3>Placing the article header</h3>
+		<p>This is where things start to get a little more interesting for anyone who already works with CSS flexbox. The article header has been placed onto the grid just as the image container was. CSS flexbox properties also work with CSS grids, beautiful! Take this CSS from the article header.</p>
+
+<pre><code class="language-css">.article__header {
+  align-self: end;
+  grid-row: 1 / 2;
+  grid-column: 2 / -1;
+}
+</code></pre>
+		
+		<p>Here as previously, we tell the browser where we want the header to be placed on the grid using <code>grid-column</code> and <code>grid-row</code>. Note that the article header is placed on the same row as the image container as well as being told to span to the <code>-1</code> column (all the way to the end). This means that the article header is sitting over the top of my image container. As the initial value of <code>align-self</code> is <code>auto</code> the browser is stretching the header over the top of the image container. This can be easily fixed by setting the value of <code>align-self</code> to <code>end</code>. The browser now renders the header only as big as the header content and neatly overlays the image container.</p>
+
+		<h3>Placing the article content</h3>
+
+		<p>Finally all that is left to do is to place the item we want the article content to be displayed in.</p>
+
+<pre><code class="language-css">.article__content {
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+}
+</code></pre>
+
+		<p>As before we just need to define values for the rows and column start and ending points. If we wanted to define more rows or if we wanted to make this layout more robust, we could make the content always end on the last row. This could be done by changing the <code>grid-row: 2 / 3;</code> declaration to be <code>grid-row: 2 / -1;</code></p>
+
 <hr>
 
 		<h2>Wrapping up</h2>
-		<p>As I originally mentioned CSS Grid is huge, I tried to keep this article relatively short and only include enough know how to get going with and I already feel that I could have split it up further.</p>
-		<p>Something that really helped me when picturing a grid layout is to draw it out on a whiteboard. This way you can design your layouts first without getting too bogged down in the code.</p>
+		<p>As I originally mentioned CSS Grid is huge, I tried to keep this article relatively short and follow Brenda's CodePen which only includes enough know-how to get going. I already feel that this could have been broken down further.</p>
+		<p>Something that really helped me when picturing a grid layout is to draw it first. This way you can design your layouts first without getting too bogged down in the code.</p>
 
 <hr>
 		<h3>Kudos</h3>
-		<p>Huge thanks to <a href="https://codepen.io/brendamarienyc/pen/BRyQzg">Brenda Storer</a> for the inspiration for this layout and to <a href="https://gridbyexample.com">Rachel Andrew</a> for her high quality CSS grid resources.</p>
+		<p>Huge thanks to <a href="https://codepen.io/brendamarienyc/pen/BRyQzg">Brenda Storer</a> for this layout and to <a href="https://gridbyexample.com">Rachel Andrew</a> for her high quality CSS grid resources. This article is just a rehash of the hard work already put in by people like Brenda and Rachel. I find a great way to learn is to write an article like this. It makes me focus and step through each line of code methodically, adding my own understanding of the properties and what they do. I hope it is helpful for you.</p>
 		<p class="lead">Fin 🏁</p>
 	</div>
 </article>

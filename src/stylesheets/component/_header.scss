@@ -1,18 +1,15 @@
 // Header
 
 .gj-header {
-	@include breakpoint(max-width screen(xs, max)) {
-		display: grid;
-		grid-template-columns: 1fr 5fr;
-		align-items: center;
+	display: grid;
+	grid-template-columns: 48px 1fr;
+	grid-gap: 5%;
+	@include breakpoint(screen(md)) {
+		grid-gap: 3%;
 	}
+	align-items: center;
+	margin-bottom: spacing(xl);
 	&__nav {
-		@include breakpoint(max-width screen(xs, max)) {
-			text-align: right;
-		}
-		@include breakpoint(screen(sm)) {
-			margin-top: 2em;
-		}
 		ul {
 			margin-bottom: 0;
 			> li:last-child {
