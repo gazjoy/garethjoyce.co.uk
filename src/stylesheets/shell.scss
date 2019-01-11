@@ -1,0 +1,41 @@
+// Normalize
+@import "node_modules/normalize.css/normalize";
+
+// Constants
+@import "const";
+
+// Helpers
+@import "helper/functions";
+@import "helper/breakpoint";
+
+@import "base/list";
+@import "base/typography";
+
+// Components
+@import "component/logo";
+@import "component/header";
+
+
+body {
+  margin: 0;
+  padding: 1vmin;
+  background-color: rgb(179, 51, 119);
+  color: white;
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+}
+
+a {
+  color: white;
+}
+
+@media(min-width: 52em) {
+  body {
+    padding: 6rem 4vw;
+  }
+}
+
+.container {
+  max-width: 1220px;
+  margin: 0 auto;
+}
