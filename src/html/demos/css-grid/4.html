@@ -1,7 +1,7 @@
-{% extends 'layouts/shell.html' %}
+{% extends 'layouts/demo.html' %}
 
 {% block title %}
-Demo 1 - CSS Grid - Talk – Gaz Joyce
+Demo 4 - CSS Grid - Demos – Gaz Joyce
 {% endblock %}
 
 {% block content %}
@@ -12,7 +12,12 @@ Demo 1 - CSS Grid - Talk – Gaz Joyce
   <div class="item">3</div>
   <div class="item">4</div>
   <div class="item">5</div>
+  <div class="item">6</div>
 </div>
+
+<hr>
+<a href="./" class="gj-back-link">&larr; Back</a>
+<h1>Spanning columns and rows</h1>
 
 <style style="
   display: inline-block;
@@ -25,17 +30,8 @@ Demo 1 - CSS Grid - Talk – Gaz Joyce
   ">.grid {
   display: grid;
   gap: 1em;
-  grid-auto-rows: minmax(100px, 1fr);
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, minmax(100px, 1fr));
-}
-
-.item {
-  background-color: #f5e2eb;
-  color: rgb(179, 51, 119);
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .item:nth-child(1) {
@@ -47,12 +43,10 @@ Demo 1 - CSS Grid - Talk – Gaz Joyce
   grid-row: 2 / 4;
 }
 
-.item:nth-child(4),
-.item:nth-child(5) {
+.item:nth-child(6) {
+  grid-column: 4 / 5;
   grid-row: 2 / 4;
 }
 </style>
-
-<p><a href="./">&larr; Back</a></p>
 
 {% endblock %}

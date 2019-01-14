@@ -17,25 +17,37 @@
 
 
 body {
-  margin: 0;
   padding: 1vmin;
-  background-color: rgb(179, 51, 119);
+  background-color: color(primary, dark-pink);
   color: white;
-  font-family: 'Lato', sans-serif;
-  font-weight: bold;
 }
 
 a {
   color: white;
 }
 
+hr {
+  border: 0;
+  height: 2px;
+  background-color: white;
+  margin: 2em 0;
+}
+
 @media(min-width: 52em) {
   body {
-    padding: 6rem 4vw;
+    padding: 4rem 4vw;
   }
 }
 
 .container {
   max-width: 1220px;
   margin: 0 auto;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5e2eb;
+  color: rgb(179, 51, 119);
 }

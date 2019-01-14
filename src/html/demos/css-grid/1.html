@@ -1,0 +1,39 @@
+{% extends 'layouts/demo.html' %}
+
+{% block title %}
+Demo 1 - CSS Grid - Demos – Gaz Joyce
+{% endblock %}
+
+{% block content %}
+
+<div class="grid">
+  <div class="item">1</div>
+  <div class="item">2</div>
+  <div class="item">3</div>
+  <div class="item">4</div>
+  <div class="item">5</div>
+  <div class="item">6</div>
+</div>
+
+<hr>
+<a href="./" class="gj-back-link">&larr; Back</a>
+<h1>Basic grid</h1>
+
+<style style="
+  display: inline-block;
+  background: #222;
+  padding: 1em;
+  white-space: pre;
+  font-family: monospace;
+  border-radius: 5px;
+  margin: 1em 0;
+  ">.grid {
+  display: grid;
+  gap: 1em; /* grid-gap */
+  grid-row-gap: 2em;
+  grid-template-columns: 1fr 400px 1fr;
+  grid-template-rows: 100px 100px;
+}
+</style>
+
+{% endblock %}
