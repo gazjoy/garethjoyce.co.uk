@@ -3,10 +3,7 @@
 .gj-header {
 	display: grid;
 	grid-template-columns: 48px 1fr;
-	grid-gap: 5%;
-	@include breakpoint(screen(md)) {
-		grid-gap: 3%;
-	}
+	grid-gap: spacing(xl);
 	align-items: center;
 	margin-bottom: spacing(xl);
 	&__nav {

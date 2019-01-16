@@ -1,10 +1,10 @@
-$text-color 					: color(neutral, darkest);
+$text-color 									: color(neutral, darkest);
 $selection-background-color 	: color(primary, pink);
-$selection-color 				: color(neutral, white);
-$link-accent 					: color(primary, pink);
-$focus-accent 					: color(primary, focus);
-$off-white 						: color(neutral, lightest);
-$blockquote-border-color		: color(primary, dark-pink);
+$selection-color 							: color(neutral, white);
+$link-accent 									: color(primary, pink);
+$focus-accent 								: color(primary, focus);
+$off-white 										: color(neutral, lightest);
+$blockquote-border-color			: color(primary, dark-pink);
 
 
 html,
@@ -14,7 +14,7 @@ input {
 
 html {
 	font-size: $font-size;
-    font-family: $font-family;
+  font-family: $font-family;
 	@include breakpoint( screen(xl) ) {
 		font-size: 120%;
 	}
@@ -45,9 +45,9 @@ a {
 	color: $link-accent;
 	&:hover {
 		color: white;
-  	background-color: $link-accent;
-  	outline: 3px solid $link-accent;
-  	text-decoration: none;
+  		background-color: $link-accent;
+  		outline: 3px solid $link-accent;
+  		text-decoration: none;
 	}
 	&:focus {
 		outline: 3px solid $focus-accent;
@@ -55,8 +55,8 @@ a {
 	}
 	&:active {
 		background-color: $link-accent;
-  	outline: 3px solid $link-accent;
-  	color: white;
+  		outline: 3px solid $link-accent;
+  		color: white;
 	}
 }
 

@@ -24,6 +24,7 @@
 @import "component/header";
 @import "component/footer";
 @import "component/article";
+@import "component/list-block";
 
 // Utility
 @import "utility/color";
@@ -32,30 +33,12 @@
 
 
 
+
+// To tidy up
 .container {
-	padding: 8vw;
+	padding: 8vw 8vw 0 8vw;
 	max-width: 64ch;
-	@include breakpoint (screen(xl)) {
-		padding-top: 3vmax;
-		padding-bottom: 3vmax;
-	}
 }
-
-.gj-back-link {}
-
-
-.var {
-  // font-family: 'Inter UI', sans-serif;
-  font-size: 42px;
-}
-@supports (font-variation-settings: normal) {
-  .var {
-    font-family: 'Inter UI var', sans-serif;
-  }
-}
-
-.hero { font-weight: 900; }
-.blurb { font-weight: 690; }
 
 // Prism overrides
 code[class*="language-"],
