@@ -33,7 +33,7 @@ $cube-right-color: color(primary, darker-pink);
   transform-style: preserve-3d;
   transform: translateZ($cube-size/2);
   transition: transform .7s ease-in-out;
-  // animation: 3s infinite alternate twist;
+  // animation: 20s infinite alternate twist;
 }
 
 .cube.show-front  { transform: translateZ(-$cube-size/2) rotateY(   0deg); }
@@ -72,7 +72,7 @@ $cube-right-color: color(primary, darker-pink);
   0% {
     transform: translateZ(-$cube-size/2) rotateY(  90deg);
   }
-  1005 {
+  100% {
     transform: translateZ(-$cube-size/2) rotateY(  -90deg);
   }
 }
