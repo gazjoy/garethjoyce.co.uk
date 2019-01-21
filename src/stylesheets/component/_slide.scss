@@ -1,0 +1,146 @@
+.slide-container {
+	display: grid;
+	grid-auto-rows: minmax(100vh, auto);
+}
+
+.has-vt {
+	background-position: left 5vmax bottom 5vmax;
+	background-repeat: no-repeat;
+	background-size: 200px;
+	@include breakpoint(screen(md)) {
+		background-position: right 5vmax bottom 5vmax;
+	}
+}
+
+[hidden] {
+	display: none !important;
+}
+
+.slide {
+	display: flex;
+	flex-direction: column;
+	padding: 3vmax 5vmax;
+
+	&__title {
+		margin-top: auto;
+	}
+
+	&__footer {
+		margin-top: auto;
+		display: flex;
+		flex-direction: column;
+		padding-top: 1rem;
+		// border-top: 1px solid rgba(255,255,255,0.3);
+		@include breakpoint(screen(md)) {
+			flex-direction: row;
+			.slide__logo {
+				margin-left: auto;
+			}
+
+			.valtech-logo {
+				width: 7rem;
+			}
+		}
+	}
+
+	&__logo {
+		margin-top: spacing(sm);
+		@include breakpoint(screen(md)) {
+			margin-top: auto;
+			margin-bottom: 0.3rem;
+		}
+	}
+
+	&--dark {
+		background-color: color(primary, dark-pink);
+  	color: color(neutral, white);
+
+  	a {
+  		color: color(neutral, white);
+  	}
+
+  	.slide__footer {
+  		.valtech-logo--white {
+  			display: block;
+  		}
+  	}
+	}
+	&--light {
+		background-color: color(neutral, lightest);
+
+		.slide__footer {
+  		.valtech-logo--black {
+  			display: block;
+  		}
+  	}
+	}
+}
+
+.has-vt .slide__footer {
+	@include breakpoint(max-width screen(sm, max)) {
+		padding-bottom: 2.5rem;
+	}
+}
+
+.has-demo {
+	.slide__footer {
+		z-index: 1;
+	}
+}
+
+.slide--cover {
+	.slide__title {
+		margin-bottom: 1rem;
+		font-size: 500%;
+		line-height: 1;
+	}
+}
+
+.slide--demo {
+	border: 0;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 0;
+}
+
+
+.slide-nav {
+	display: flex;
+}
+
+[data-dir] {
+	border: 0;
+	background: none;
+	background-color: color(neutral, lightest);
+	font-size: 2rem;
+	line-height: 1;
+	padding: 2px 10px 16px 10px;
+
+	&:focus {
+		outline: none;
+		background-color: color(primary, focus);
+	}
+	span {
+		display: none;
+	}
+}
+
+[data-dir="forwards"] {
+
+	&::before {
+		content: "→"
+	}
+}
+
+[data-dir="backwards"] {
+	order: -1;
+	&::before {
+		content: "←"
+	}
+}
+

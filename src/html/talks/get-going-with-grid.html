@@ -1,0 +1,56 @@
+{% extends 'layouts/slides.html' %}
+
+{% block title %}
+Get Going with Grid - Talks – Gaz Joyce
+{% endblock %}
+
+{% block content %}
+
+<div class="slide slide--dark slide--cover" id="slide1">
+	<h1 class="slide__title"><em>Get going with&nbsp;grid</em></h1>
+	<p class="lead"><strong>Gareth Joyce</strong> – Interaction Designer</p>
+
+	{% include 'shared/slide/footer.html' %}
+</div>
+
+<div class="slide slide--light has-t" id="slide2" hidden>
+	<h2 class="h1 slide__title">What is CSS grid?</h2>
+	<ul>
+		<li>2d layout for CSS</li>
+		<li>Before this hacks, <code>&lt;table&gt;</code> / <code>float: left;</code> / <code>display: inline-block;</code></li>
+		<li>Flexbox only got us so far</li>
+		<li>Items can be placed in rows and columns at the same time</li>
+	</ul>
+
+	{% include 'shared/slide/footer.html' %}
+</div>
+
+<div class="slide slide--dark has-vt has-demo" id="slide3" hidden>
+	<iframe src="/demos/css-grid/1.html" class="slide--demo"></iframe>
+
+	{% include 'shared/slide/footer.html' %}
+</div>
+
+
+<div class="slide slide--light has-vt slide--cover" id="slide-recruit" hidden>
+	<h2 class="slide__title">We are recruiting</h2>
+	<p class="lead"><a href="https://www.valtech.com/en-gb/career/"><em>https://www.valtech.com/en-gb/career/</em></a></p>
+
+	{% include 'shared/slide/footer.html' %}
+</div>
+
+<div class="slide slide--light has-vt slide--cover" id="slide-recruit" hidden>
+	<h2 class="slide__title">Thank you!</h2>
+	<p class="lead">
+		<a href="https://www.garethjoyce.co.uk/demos/css-grid/">CSS grid demos</a><br>
+		<a href="https://www.garethjoyce.co.uk/words/2018/getting-griddy-with-it.html">Getting griddy with it</a>
+	</p>
+
+	<p>
+		<a href="https://twitter.com/gazjoy"><em>@gazjoy</em></a>
+	</p>
+
+	{% include 'shared/slide/footer.html' %}
+</div>
+
+{% endblock %}
