@@ -13,7 +13,7 @@ Get Going with Grid - Talks – Gaz Joyce
 	{% include 'shared/slide/footer.html' %}
 </div>
 
-<div class="slide slide--light has-t" id="slide2" hidden>
+<div class="slide slide--light" id="slide2" hidden>
 	<h2 class="h1 slide__title">What is CSS grid?</h2>
 	<ul>
 		<li>2d layout for CSS</li>
@@ -25,10 +25,34 @@ Get Going with Grid - Talks – Gaz Joyce
 	{% include 'shared/slide/footer.html' %}
 </div>
 
-<div class="slide slide--dark has-vt has-demo" id="slide3" hidden>
-	<iframe src="/demos/css-grid/1.html" class="slide--demo"></iframe>
+<div class="slide slide--light has-t" id="slide1a" hidden>
+	<h2 class="h1 slide__title">Basic grid</h2>
+	<ul>
+		<li>Define the grid container <code>display: grid;</code></li>
+		<li>Create columns <code>grid-template-columns</code></li>
+		<li>Create rows <code>grid-template-rows</code></li>
+		<li>Add spacing between items <code>gap</code> – <code>grid-gap</code></li>
+	</ul>
 
 	{% include 'shared/slide/footer.html' %}
+</div>
+
+<div class="slide slide--dark has-vt has-demo" id="slide3" hidden>
+	<iframe src="/demos/css-grid/1.html" class="slide--demo"></iframe>
+</div>
+
+<div class="slide slide--light has-t" id="slide3a" hidden>
+	<h2 class="h1 slide__title">Smarter grid</h2>
+	<ul>
+		<li>Repeat columns or rows with <code>repeat()</code> function</li>
+		<li>Scaleable items with <code>minmax()</code> function</li>
+	</ul>
+
+	{% include 'shared/slide/footer.html' %}
+</div>
+
+<div class="slide slide--dark has-vt has-demo" id="slide3b" hidden>
+	<iframe src="/demos/css-grid/2.html" class="slide--demo"></iframe>
 </div>
 
 

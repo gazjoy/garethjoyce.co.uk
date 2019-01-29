@@ -16,7 +16,7 @@
   <div class="item">4</div>
   <div class="item">5</div>
   <div class="item">6</div>
-  <div class="item">7</div>
+  <div class="item">7. This item has a bit more content to show you how the minmax() function works. As more content is added, the item will keep growing as will all of its siblings.</div>
   <div class="item">8</div>
 </div>
 
@@ -33,6 +33,9 @@
   gap: 1em;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, minmax(100px, 1fr));
+}
+.item {
+  padding: 1rem;
 }
 </style>
 

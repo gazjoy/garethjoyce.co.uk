@@ -120,8 +120,27 @@
 	font-size: 2rem;
 	line-height: 1;
 	padding: 2px 10px 16px 10px;
+	
+	position: absolute !important;
+width: 1px !important;
+height: 1px !important;
+margin: 0 !important;
+overflow: hidden !important;
+clip: rect(0 0 0 0) !important;
+-webkit-clip-path: inset(50%) !important;
+clip-path: inset(50%) !important;
+white-space: nowrap !important;
 
 	&:focus {
+		position: static !important;
+width: auto !important;
+height: auto !important;
+margin: inherit !important;
+overflow: visible !important;
+clip: auto !important;
+-webkit-clip-path: none !important;
+clip-path: none !important;
+white-space: inherit !important;
 		outline: none;
 		background-color: color(primary, focus);
 	}
