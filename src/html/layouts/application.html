@@ -11,6 +11,22 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,900,900i" rel="stylesheet">
     {% endblock %}
     {% include "shared/app-icons.html" %}
+    <script>
+    (function() {
+      if (!('serviceWorker' in navigator)) {
+        console.log('Service worker not supported');
+        return;
+      }
+      navigator.serviceWorker.register('/javascripts/service-worker.js')
+      .then(function(registration) {
+        console.log('SW successfully registered');
+      })
+      .catch(function(error) {
+        console.log('registration failed', error);
+      });
+    })();
+  </script>
+
   </head>
   <body class="{{ bodyClasses }}">
     {% include "shared/skip-link.html" %}
