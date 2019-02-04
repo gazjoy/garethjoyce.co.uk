@@ -99,3 +99,26 @@ blockquote {
 		margin-left: -2em;
 	}
 }
+
+
+.gj-hero {
+	font-size: 500%;
+}
+
+.gj-small {
+	font-size: $font-size-sm;
+}
+
+.gj-xsmall {
+	font-size: $font-size-xs;
+}
+
+.gj-xxsmall {
+	font-size: $font-size-xxs;
+}
+
+.highlighter {
+	background-color: color(primary, pink);
+	padding-left: spacing(px-lg);
+	padding-right: spacing(px-lg);
+}

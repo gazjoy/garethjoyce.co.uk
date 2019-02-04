@@ -84,8 +84,11 @@ $screens: (
 $font-family            : 'Lato',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Open Sans,Helvetica Neue,sans-serif;
 
 $font-size              : 110%;
+$font-size-xxs          : 0.5em;
+$font-size-xs           : 0.65em;
 $font-size-sm           : 0.85em;
 $font-size-lg           : 1.2em;
+
 
 $bold                   : 900;
 
@@ -111,9 +114,11 @@ $typescale: (
  */
 
 $spacing: (
-    base                : 1em,
-    xs                  : .6em,
-    sm                  : .8em,
-    lg                  : 1.4em,
-    xl                  : 2em
+    base                : 1rem,
+    xs                  : .6rem,
+    sm                  : .8rem,
+    lg                  : 1.4rem,
+    xl                  : 2rem,
+    px-sm               : 10px,
+    px-lg               : 20px
 );

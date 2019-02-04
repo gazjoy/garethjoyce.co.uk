@@ -23,13 +23,14 @@
 
 	&__title {
 		margin-top: auto;
+		margin-bottom: spacing();
 	}
 
 	&__footer {
 		margin-top: auto;
 		display: flex;
 		flex-direction: column;
-		padding-top: 1rem;
+		padding-top: spacing();
 		// border-top: 1px solid rgba(255,255,255,0.3);
 		@include breakpoint(screen(md)) {
 			flex-direction: row;
@@ -51,28 +52,32 @@
 		}
 	}
 
+	&--dark,
+	&--black {
+		background-color: color(neutral, black);
+  		color: color(neutral, white);
+
+	  	a {
+	  		color: color(neutral, white);
+	  	}
+
+	  	.slide__footer {
+	  		.valtech-logo--white {
+	  			display: block;
+	  		}
+	  	}
+	}
 	&--dark {
 		background-color: color(primary, dark-pink);
-  	color: color(neutral, white);
-
-  	a {
-  		color: color(neutral, white);
-  	}
-
-  	.slide__footer {
-  		.valtech-logo--white {
-  			display: block;
-  		}
-  	}
 	}
 	&--light {
 		background-color: color(neutral, lightest);
 
-		.slide__footer {
-  		.valtech-logo--black {
-  			display: block;
-  		}
-  	}
+			.slide__footer {
+	  		.valtech-logo--black {
+	  			display: block;
+	  		}
+	  	}
 	}
 }
 
@@ -88,13 +93,6 @@
 	}
 }
 
-.slide--cover {
-	.slide__title {
-		margin-bottom: 1rem;
-		font-size: 500%;
-		line-height: 1;
-	}
-}
 
 .slide--demo {
 	border: 0;
@@ -108,6 +106,11 @@
 	z-index: 0;
 }
 
+.slide__body {
+	position: relative;
+	z-index: 1;
+	margin-top: auto;
+}
 
 .slide-nav {
 	display: flex;

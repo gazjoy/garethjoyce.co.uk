@@ -46,3 +46,9 @@ html {
 	// float: right;
 	display: none;
 }
+
+.has-demo.has-img {
+	.slide--demo {
+		object-fit: cover;
+	}
+}
