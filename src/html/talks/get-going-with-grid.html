@@ -177,11 +177,9 @@ Get Going with Grid - Talks – Gaz Joyce
 	{% include 'shared/slide/footer.html' %}
 </div>
 
-
 <div class="slide slide--dark has-vt has-demo" id="demo1" hidden>
 	<iframe src="/demos/css-grid/1.html" class="slide--demo"></iframe>
 </div>
-
 <div class="slide slide--light has-t" id="demo1a" hidden>
 	<h2 class="h1 slide__title">Basic grid</h2>
 	<ul>
@@ -198,7 +196,6 @@ Get Going with Grid - Talks – Gaz Joyce
 <div class="slide slide--dark has-vt has-demo" id="demo2" hidden>
 	<iframe src="/demos/css-grid/2.html" class="slide--demo"></iframe>
 </div>
-
 <div class="slide slide--light has-t" id="demo2a" hidden>
 	<h2 class="h1 slide__title">Smarter grid</h2>
 	<ul>
@@ -212,7 +209,6 @@ Get Going with Grid - Talks – Gaz Joyce
 <div class="slide slide--dark has-vt has-demo" id="demo3" hidden>
 	<iframe src="/demos/css-grid/3.html" class="slide--demo"></iframe>
 </div>
-
 <div class="slide slide--light has-t" id="demo3a" hidden>
 	<h2 class="h1 slide__title">Spanning columns</h2>
 	<ul>
@@ -228,6 +224,15 @@ Get Going with Grid - Talks – Gaz Joyce
 <div class="slide slide--dark has-vt has-demo" id="demo4" hidden>
 	<iframe src="/demos/css-grid/4.html" class="slide--demo"></iframe>
 </div>
+<div class="slide slide--light has-t" id="demo4a" hidden>
+	<h2 class="h1 slide__title">Spanning columns and rows</h2>
+	<ul>
+		<li>Grid lines are numbered the same way on the Y axis, <code>grid-row</code></li>
+		<li>Items without defined placement get auto placed by the browser</li>
+	</ul>
+
+	{% include 'shared/slide/footer.html' %}
+</div>
 
 <div class="slide slide--light" id="slideCooking" hidden>
 	<h2 class="h1 slide__title gj-hero">Now we're cooking 🍳</h2>
@@ -237,7 +242,6 @@ Get Going with Grid - Talks – Gaz Joyce
 <div class="slide slide--dark has-vt has-demo" id="demo5" hidden>
 	<iframe src="/demos/css-grid/5.html" class="slide--demo"></iframe>
 </div>
-
 <div class="slide slide--light has-t" id="demo5a" hidden>
 	<h2 class="h1 slide__title">Using grid-template-areas</h2>
 	<ul>
@@ -253,19 +257,46 @@ Get Going with Grid - Talks – Gaz Joyce
 <div class="slide slide--dark has-vt has-demo" id="demo6" hidden>
 	<iframe src="/demos/css-grid/6.html" class="slide--demo"></iframe>
 </div>
+<div class="slide slide--light has-t" id="demo6a" hidden>
+	<h2 class="h1 slide__title">Using @media</h2>
+	<ul>
+		<li>Grid coupled with <code>@media</code> is powerful</li>
+		<li>Design mobile first, you may not need a grid</li>
+	</ul>
+
+	{% include 'shared/slide/footer.html' %}
+</div>
 
 <div class="slide slide--dark has-vt has-demo" id="demo7" hidden>
 	<iframe src="/demos/css-grid/7.html" class="slide--demo"></iframe>
+</div>
+<div class="slide slide--light has-t" id="demo7a" hidden>
+	<h2 class="h1 slide__title">Implicit grid</h2>
+	<ul>
+		<li>When you have more items than what is explicitly defined</li>
+		<li>Can be controlled with auto placement</li>
+		<li><code>grid-auto-rows</code> / <code>grid-auto-flow</code></li>
+	</ul>
+
+	{% include 'shared/slide/footer.html' %}
 </div>
 
 <div class="slide slide--dark has-vt has-demo" id="demo8" hidden>
 	<iframe src="/demos/css-grid/8.html" class="slide--demo"></iframe>
 </div>
+<div class="slide slide--light has-t" id="demo8a" hidden>
+	<h2 class="h1 slide__title">Fit as many items as possible</h2>
+	<ul>
+		<li>No media queries!</li>
+		<li>Use <code>auto-fill</code> / <code>auto-fit</code> with <code>repeat</code></li>
+	</ul>
+
+	{% include 'shared/slide/footer.html' %}
+</div>
 
 <div class="slide slide--dark has-vt has-demo" id="demo9" hidden>
 	<iframe src="/demos/css-grid/9.html" class="slide--demo"></iframe>
 </div>
-
 <div class="slide slide--light has-t" id="demo9a" hidden>
 	<h2 class="h1 slide__title">Using @supports</h2>
 	<ul>
@@ -286,10 +317,6 @@ Get Going with Grid - Talks – Gaz Joyce
 	</blockquote>
 	{% include 'shared/slide/footer.html' %}
 </div>
-
-
-    
-
 
 <!-- summarise grid -->
 

@@ -31,9 +31,9 @@
   gap: 1em;
   grid-auto-rows: minmax(100px, 1fr);
   grid-template-areas:
-  	"a a a b"
-  	"c c d e"
-  	"c c f e";
+  	"a a a ."
+  	"b b . c"
+  	"b b . c";
 }
 
 .item:nth-child(1) {
@@ -41,11 +41,11 @@
 }
 
 .item:nth-child(3) {
-  grid-area: c;
+  grid-area: b;
 }
 
 .item:nth-child(6) {
-  grid-area: e;
+  grid-area: c;
 }
 
 </style>
