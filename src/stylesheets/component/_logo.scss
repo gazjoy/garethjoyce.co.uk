@@ -56,10 +56,10 @@ $cube-right-color: color(primary, darker-pink);
 
 .cube__face--front  { background: $cube-front-color; }
 .cube__face--right  { background: $cube-right-color; }
-.cube__face--back   { background: hsla(120, 100%, 50%, 1); }
+// .cube__face--back   { background: hsla(120, 100%, 50%, 1); }
 .cube__face--left   { background: $cube-left-color; }
-.cube__face--top    { background: hsla(240, 100%, 50%, 1); }
-.cube__face--bottom { background: hsla(300, 100%, 50%, 1); }
+// .cube__face--top    { background: hsla(240, 100%, 50%, 1); }
+// .cube__face--bottom { background: hsla(300, 100%, 50%, 1); }
 
 .cube__face--front  { transform: rotateY(  0deg) translateZ($cube-size/2); }
 .cube__face--right  { transform: rotateY( 90deg) translateZ($cube-size/2); }

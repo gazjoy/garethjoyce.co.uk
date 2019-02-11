@@ -28,6 +28,7 @@
     width: auto;
     white-space: inherit;
     background-color: $focus-accent;
+    color: color(neutral, darkest);
     padding: 10px 1em;
     @include breakpoint(max-width screen(xs, max)) {
     	margin: 10px;
