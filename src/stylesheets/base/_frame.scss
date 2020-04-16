@@ -1,0 +1,49 @@
+$background-color: color(neutral, lightest);
+$border-size: 10px;
+$border-color: color(primary, light-pink);
+
+html,
+body {
+	&::before,
+	&::after {
+		content: "";
+		position: fixed;
+		z-index: 10;
+		background-color: $border-color;
+	}
+}
+html {
+	&::before,
+	&::after {
+		height: $border-size;
+	}
+	&::before {
+		top: 0;
+		left: 0;
+		right: 0;
+	}
+	&::after {
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+}
+
+body {
+	background-color: $background-color;
+
+	&::before,
+	&::after {
+		width: $border-size;
+	}
+	&::before {
+		top: 0;
+		left: 0;
+		bottom: 0;
+	}
+	&::after {
+		top: 0;
+		bottom: 0;
+		right: 0;
+	}
+}

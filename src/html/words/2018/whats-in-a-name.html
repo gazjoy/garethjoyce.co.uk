@@ -1,0 +1,46 @@
+{% extends 'layouts/application.html' %}
+
+{% block title %}
+What’s in a name? – Words – Gaz Joyce
+{% endblock %}
+
+{% block content %}
+<article class="gj-article">
+	<header class="gj-article__header">
+		<h1>What’s in a name?</h1>
+		<p>09 December 2018</p>
+	</header>
+
+	<p>When designing and creating a design system or pattern library, it is always difficult to Christen a shiny newborn pattern. I have two children and it took me and my wife weeks of brainstorming, vetoing and voting to find suitable names for each of our lovely children.</p>
+	
+	<p>As a parent you have a big responsiblity when naming your child. If you get the name wrong you know your child could resent it, get it right and they could excel. A lot of what makes you who you are is your name. It's at the heart of your identity, you give to others as a common way to communicate with you and how you are known for your whole life.</p>
+
+	<blockquote>
+		<p>When we are designing interfaces, we need to be careful when we give a name to a particular component or pattern.</p>
+	</blockquote>
+
+	<p>In <abbr title="Cascading style sheets">CSS</abbr>, the <abbr title="Block, element, modifier">BEM</abbr> (block, element, modifier) convention helps us define some names to adhere to as well as an elegant way of constructing components.</p>
+
+	<h2>The do’s and the don’ts</h2>
+
+	<ul>
+		<li><strong class="u-text-primary-pink">Do</strong>: keep the name meaningful, it doesnt matter if it is too long</li>
+		<li><strong class="u-text-primary-pink">Do</strong>: use BEM convention to apply, modified versions of the same thing</li>
+		<li><strong class="u-text-primary-pink">Do</strong>: use a thesaurus to find synonyms</li>
+		<li><strong class="u-text-primary-pink">Do</strong>: listen to your teams suggestions of names to establish a common language</li>
+	</ul>
+
+	<ul>
+		<li><strong class="u-text-primary-darker-pink">Don’t</strong>: make the name too ambiguious so as to confuse those who will be using it</li>
+		<li><strong class="u-text-primary-darker-pink">Don’t</strong>: use names that describe what the content of the component will be</li>
+		<li><strong class="u-text-primary-darker-pink">Don’t</strong>: use names that describe the position of the element on the page</li>
+		<li><strong class="u-text-primary-darker-pink">Don’t</strong>: use a mix of singular and plural names</li>
+	</ul>
+
+	<p>Take a look at <a href="https://gist.github.com/gazjoy/3fd841211ccdbd260df1b6b7f10eb1b1">my list of regularly used names</a>. I hope it helps you when you proudly name your own patterns and components.</p>
+
+	<p class="lead">Congratulations! 👶🏼</p>
+
+
+</article>
+{% endblock %}

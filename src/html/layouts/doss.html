@@ -1,0 +1,23 @@
+{% from 'macros/helpers.html' import sprite %}
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}{{ title }}{% endblock %}</title>
+    <link rel="stylesheet" href="/stylesheets/app.css">
+    <link rel="stylesheet" href="/stylesheets/inter-ui.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% include "shared/app-icons.html" %}
+    {% block head %}{% endblock %}
+  </head>
+  <body>
+    <div class="container">
+      <main role="main" id="main-content">
+        {% block content %}{% endblock %}
+      </main>
+      {% include "shared/footer.html" %}
+    </div>
+    {% block javascript %}
+    {% endblock %}
+  </body>
+</html>

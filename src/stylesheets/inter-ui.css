@@ -1,0 +1,27 @@
+/* --------------------------------------------------------------------------
+Single variable font.
+Note that you may want to do something like this to make sure you're serving
+constant fonts to older browsers:
+html {
+  font-family: 'Inter UI', sans-serif;
+}
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: 'Inter UI var', sans-serif;
+  }
+}
+BUGS:
+- Safari 12.0 will default to italic instead of regular when font-weight
+  is provided in a @font-face declaration.
+  Workaround: Use "Inter UI var alt" for Safari, or explicitly set
+  `font-variation-settings:"slnt" DEGREE`.
+*/
+@font-face {
+  font-family: 'Inter UI var';
+  /*font-weight: 400 900;*/
+  font-style: oblique 0deg 10deg;
+
+  src: url("/fonts/inter-ui/Inter-UI.var.woff2?v=3.0") format("woff2-variations"),
+       url("/fonts/inter-ui/Inter-UI.var.woff2?v=3.0") format("woff2");
+  font-weight: 1 999;
+}

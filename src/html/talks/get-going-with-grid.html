@@ -1,0 +1,388 @@
+{% extends 'layouts/slides.html' %}
+
+{% block title %}
+Get Going with Grid - Talks – Gaz Joyce
+{% endblock %}
+
+{% block content %}
+
+<div class="slide slide--black has-vt has-demo has-img" id="slideCover">
+	<div class="slide__body">
+		<h1 class="slide__title gj-hero"><em class="highlighter">Get going with&nbsp;grid</em></h1>
+		<p class="lead"><span class="highlighter"><strong>Gareth Joyce</strong> – Interaction Designer</span></p>
+	</div>
+	<img src="/images/screens/tciotditn.jpg" class="slide--demo" />
+	{% include 'shared/slide/footer.html' %}
+</div>
+
+
+<div class="slide slide--light" id="slideWhatA" hidden>
+	<h2 class="h1 slide__title">What is CSS grid?</h2>
+	<ul>
+		<li>Not another layout hack <code>&lt;table&gt;</code> / <code>float: left;</code> / <code>display: inline-block;</code></li>
+		<li>Not a grid system</li>
+		<li>Has nothing to do with Bootstrap</li>
+		<li>Unlike HTML <code>col-xs-6 col-sm-8 col-md-12</code></li>
+		<li>Method of describing layouts with grid structures in CSS</li>
+	</ul>
+
+	{% include 'shared/slide/footer.html' %}
+</div>
+
+<div class="slide slide--light" id="slideWhatB" hidden>
+	<h2 class="h1 slide__title gj-hero">What about flexbox?</h2>
+	{% include 'shared/slide/footer.html' %}
+</div>
+
+<div class="slide slide--light" id="slideWhatC" hidden>
+	<h2 class="h1 slide__title">Flexbox only got us so far</h2>
+	<ul>
+		<li>Flexbox is column or row</li>
+		<li>CSS grid is a 2D layout</li>
+		<li>Items can be placed in rows and columns at the same time</li>
+		<li>Flexbox 💗 Grid</li>
+	</ul>
+
+	{% include 'shared/slide/footer.html' %}
+</div>
+
+<div class="slide slide--black has-vt has-demo has-img" id="slideCover2">
+	<img src="/images/screens/tciotditn.jpg" class="slide--demo" />
+</div>
+
+<div class="slide slide--black has-vt has-demo has-img" id="slide1" hidden>
+	<img src="/images/screens/maxresdefault.jpg" class="slide--demo" />
+</div>
+
+<div class="slide slide--black has-vt has-demo has-img" id="slide2a" hidden>
+	<img src="/images/screens/3637.jpg" class="slide--demo" />
+</div>
+
+<div class="slide slide--black has-vt has-demo has-img" id="slide2b" hidden>
+	<div class="slide__body">
+		<h2 class="h1 slide__title"><span class="highlighter">Anatomy of a grid</span></h2>
+		<ul>
+			<li>Grid container</li>
+			<li>Grid lines</li>
+			<li>Grid gap</li>
+			<li>Grid track</li>
+			<li>Grid cell</li>
+			<li>Grid area</li>
+		</ul>
+	</div>
+	<img src="/images/screens/3637.jpg" class="slide--demo" />
+	{% include 'shared/slide/footer.html' %}
+</div>
+
+<div class="slide slide--black has-vt has-demo has-img" id="slide2c" hidden>
+	<div class="slide__body">
+		<h2 class="h1 slide__title"><span class="highlighter">Anatomy of a grid</span></h2>
+		<ul>
+			<li><span class="highlighter">Grid container</span></li>
+			<li>Grid lines</li>
+			<li>Grid gap</li>
+			<li>Grid track</li>
+			<li>Grid cell</li>
+			<li>Grid area</li>
+		</ul>
+	</div>
+	<img src="/images/screens/grid/container.jpg" class="slide--demo" />
+	{% include 'shared/slide/footer.html' %}
+</div>
+
+<div class="slide slide--black has-vt has-demo has-img" id="slide2d" hidden>
+	<div class="slide__body">
+		<h2 class="h1 slide__title"><span class="highlighter">Anatomy of a grid</span></h2>
+		<ul>
+			<li>Grid container</li>
+			<li><span class="highlighter">Grid lines</span></li>
+			<li>Grid gap</li>
+			<li>Grid track</li>
+			<li>Grid cell</li>
+			<li>Grid area</li>
+		</ul>
+	</div>
+	<img src="/images/screens/grid/lines.jpg" class="slide--demo" />
+	{% include 'shared/slide/footer.html' %}
+</div>
+
+<div class="slide slide--black has-vt has-demo has-img" id="slide2e" hidden>
+	<div class="slide__body">
+		<h2 class="h1 slide__title"><span class="highlighter">Anatomy of a grid</span></h2>
+		<ul>
+			<li>Grid container</li>
+			<li>Grid lines</li>
+			<li><span class="highlighter">Grid gap</span></li>
+			<li>Grid track</li>
+			<li>Grid cell</li>
+			<li>Grid area</li>
+		</ul>
+	</div>
+	<img src="/images/screens/grid/gap.jpg" class="slide--demo" />
+	{% include 'shared/slide/footer.html' %}
+</div>
+
+<div class="slide slide--black has-vt has-demo has-img" id="slide2f" hidden>
+	<div class="slide__body">
+		<h2 class="h1 slide__title"><span class="highlighter">Anatomy of a grid</span></h2>
+		<ul>
+			<li>Grid container</li>
+			<li>Grid lines</li>
+			<li>Grid gap</li>
+			<li><span class="highlighter">Grid track</span></li>
+			<li>Grid cell</li>
+			<li>Grid area</li>
+		</ul>
+	</div>
+	<img src="/images/screens/grid/track.jpg" class="slide--demo" />
+	{% include 'shared/slide/footer.html' %}
+</div>
+
+<div class="slide slide--black has-vt has-demo has-img" id="slide2g" hidden>
+	<div class="slide__body">
+		<h2 class="h1 slide__title"><span class="highlighter">Anatomy of a grid</span></h2>
+		<ul>
+			<li>Grid container</li>
+			<li>Grid lines</li>
+			<li>Grid gap</li>
+			<li>Grid track</li>
+			<li><span class="highlighter">Grid cell</span></li>
+			<li>Grid area</li>
+		</ul>
+	</div>
+	<img src="/images/screens/grid/cell.jpg" class="slide--demo" />
+	{% include 'shared/slide/footer.html' %}
+</div>
+
+<div class="slide slide--black has-vt has-demo has-img" id="slide2h" hidden>
+	<div class="slide__body">
+		<h2 class="h1 slide__title"><span class="highlighter">Anatomy of a grid</span></h2>
+		<ul>
+			<li>Grid container</li>
+			<li>Grid lines</li>
+			<li>Grid gap</li>
+			<li>Grid track</li>
+			<li>Grid cell</li>
+			<li><span class="highlighter">Grid area</span></li>
+		</ul>
+	</div>
+	<img src="/images/screens/grid/area.jpg" class="slide--demo" />
+	{% include 'shared/slide/footer.html' %}
+</div>
+
+
+
+
+<div class="slide slide--light" id="slideLetsDemo" hidden>
+	<h2 class="h1 slide__title gj-hero">Demo time ⌚</h2>
+	{% include 'shared/slide/footer.html' %}
+</div>
+
+<div class="slide slide--dark has-vt has-demo" id="demo1" hidden>
+	<iframe src="/demos/css-grid/1.html" class="slide--demo"></iframe>
+</div>
+<div class="slide slide--light has-t" id="demo1a" hidden>
+	<h2 class="h1 slide__title">Basic grid</h2>
+	<ul>
+		<li>Define the grid container <code>display: grid;</code></li>
+		<li>Create columns <code>grid-template-columns</code></li>
+		<li>Shiny new <code>fr</code> unit</li>
+		<li>Create rows <code>grid-template-rows</code></li>
+		<li>Add spacing between items <code>gap</code> – <code>grid-gap</code></li>
+	</ul>
+
+	{% include 'shared/slide/footer.html' %}
+</div>
+
+<div class="slide slide--dark has-vt has-demo" id="demo2" hidden>
+	<iframe src="/demos/css-grid/2.html" class="slide--demo"></iframe>
+</div>
+<div class="slide slide--light has-t" id="demo2a" hidden>
+	<h2 class="h1 slide__title">Smarter grid</h2>
+	<ul>
+		<li>Repeat columns or rows with <code>repeat()</code> function</li>
+		<li>Scaleable items with <code>minmax()</code> function</li>
+	</ul>
+
+	{% include 'shared/slide/footer.html' %}
+</div>
+
+<div class="slide slide--dark has-vt has-demo" id="demo3" hidden>
+	<iframe src="/demos/css-grid/3.html" class="slide--demo"></iframe>
+</div>
+<div class="slide slide--light has-t" id="demo3a" hidden>
+	<h2 class="h1 slide__title">Spanning columns</h2>
+	<ul>
+		<li>Grid lines are numbered and reverse numbered <code>grid-column: 1 / -1;</code></li>
+		<li>Negate need for <code>col-xs-6 col-sm-8 col-md-12</code></li>
+		<li>Grid lines can also be named</li>
+	</ul>
+
+	{% include 'shared/slide/footer.html' %}
+</div>
+
+
+<div class="slide slide--dark has-vt has-demo" id="demo4" hidden>
+	<iframe src="/demos/css-grid/4.html" class="slide--demo"></iframe>
+</div>
+<div class="slide slide--light has-t" id="demo4a" hidden>
+	<h2 class="h1 slide__title">Spanning columns and rows</h2>
+	<ul>
+		<li>Grid lines are numbered the same way on the Y axis, <code>grid-row</code></li>
+		<li>Items without defined placement get auto placed by the browser</li>
+	</ul>
+
+	{% include 'shared/slide/footer.html' %}
+</div>
+
+<div class="slide slide--light" id="slideCooking" hidden>
+	<h2 class="h1 slide__title gj-hero">Now we're cooking 🍳</h2>
+	{% include 'shared/slide/footer.html' %}
+</div>
+
+<div class="slide slide--dark has-vt has-demo" id="demo5" hidden>
+	<iframe src="/demos/css-grid/5.html" class="slide--demo"></iframe>
+</div>
+<div class="slide slide--light has-t" id="demo5a" hidden>
+	<h2 class="h1 slide__title">Using grid-template-areas</h2>
+	<ul>
+		<li>Draw a map of your layout</li>
+		<li>Use semantic names</li>
+		<li>Redefine grid at different screen sizes</li>
+		<li>Mapping items is already done</li>
+	</ul>
+
+	{% include 'shared/slide/footer.html' %}
+</div>
+
+<div class="slide slide--dark has-vt has-demo" id="demo6" hidden>
+	<iframe src="/demos/css-grid/6.html" class="slide--demo"></iframe>
+</div>
+<div class="slide slide--light has-t" id="demo6a" hidden>
+	<h2 class="h1 slide__title">Using @media</h2>
+	<ul>
+		<li>Grid coupled with <code>@media</code> is powerful</li>
+		<li>Design mobile first, you may not need a grid</li>
+	</ul>
+
+	{% include 'shared/slide/footer.html' %}
+</div>
+
+<div class="slide slide--dark has-vt has-demo" id="demo7" hidden>
+	<iframe src="/demos/css-grid/7.html" class="slide--demo"></iframe>
+</div>
+<div class="slide slide--light has-t" id="demo7a" hidden>
+	<h2 class="h1 slide__title">Implicit grid</h2>
+	<ul>
+		<li>When you have more items than what is explicitly defined</li>
+		<li>Can be controlled with auto placement</li>
+		<li><code>grid-auto-rows</code> / <code>grid-auto-flow</code></li>
+	</ul>
+
+	{% include 'shared/slide/footer.html' %}
+</div>
+
+<div class="slide slide--dark has-vt has-demo" id="demo8" hidden>
+	<iframe src="/demos/css-grid/8.html" class="slide--demo"></iframe>
+</div>
+<div class="slide slide--light has-t" id="demo8a" hidden>
+	<h2 class="h1 slide__title">Fit as many items as possible</h2>
+	<ul>
+		<li>No media queries!</li>
+		<li>Use <code>auto-fill</code> / <code>auto-fit</code> with <code>repeat</code></li>
+	</ul>
+
+	{% include 'shared/slide/footer.html' %}
+</div>
+
+
+<div class="slide slide--dark has-vt has-demo" id="demo10" hidden>
+	<iframe src="/demos/css-grid/10.html" class="slide--demo"></iframe>
+</div>
+<div class="slide slide--light" id="slideA11y" hidden>
+	<h2 class="h1 slide__title gj-hero">Consider accessibility 🗣️</h2>
+	{% include 'shared/slide/footer.html' %}
+</div>
+<div class="slide slide--light has-t" id="demo10a" hidden>
+	<h2 class="h1 slide__title">Reordering items</h2>
+	<ul>
+		<li>The <code>order</code> property lets us reorder items</li>
+		<li>Be careful using it, think about screen readers</li>
+		<li>Use an <code>aria-label</code> as a minimum to convey meaning</li>
+		<li>Ideally reorder in the source code</li>
+	</ul>
+
+	{% include 'shared/slide/footer.html' %}
+</div>
+
+
+<div class="slide slide--light" id="slideSupport" hidden>
+	<h2 class="h1 slide__title gj-hero">What about browser support? 🌈</h2>
+	{% include 'shared/slide/footer.html' %}
+</div>
+<div class="slide slide--dark has-vt has-demo" id="demoSupport" hidden>
+	<iframe src="https://caniuse.com/#feat=css-grid" class="slide--demo"></iframe>
+</div>
+
+<div class="slide slide--dark has-vt has-demo" id="demo9" hidden>
+	<iframe src="/demos/css-grid/9.html" class="slide--demo"></iframe>
+</div>
+<div class="slide slide--dark has-vt has-demo" id="demoSupportFeat" hidden>
+	<iframe src="https://caniuse.com/#feat=css-featurequeries" class="slide--demo"></iframe>
+</div>
+<div class="slide slide--light has-t" id="demo9a" hidden>
+	<h2 class="h1 slide__title">Using @supports</h2>
+	<ul>
+		<li>Always check your analytics for browser usage</li>
+		<li>Feature query, like Modernizr.js for CSS</li>
+		<li>No polyfill for grid</li>
+		<li>Use progressive enhancement</li>
+		<li>Can use grid without feature queries, beauty of CSS</li>
+	</ul>
+
+	{% include 'shared/slide/footer.html' %}
+</div>
+
+<div class="slide slide--light" id="slideRemember" hidden>
+	<h2 class="h1 slide__title gj-hero">Always remember ⚠️</h2>
+	<blockquote><p class="h2">Websites do <strong><em>not</em></strong> need to look the same on every browser!</p>
+		<cite>– Some smart human</cite>
+	</blockquote>
+	{% include 'shared/slide/footer.html' %}
+</div>
+
+<!-- summarise grid -->
+
+<div class="slide slide--light has-vt slide--cover" id="slide-availability" hidden>
+	<h2 class="slide__title gj-hero">All demos</h2>
+	<p class="lead"><a href="/talks/get-going-with-grid.html">https://www.garethjoyce.co.uk/demos/css-grid/</a></p>
+	{% include 'shared/slide/footer.html' %}
+</div>
+
+<div class="slide slide--light has-vt slide--cover" id="slide-further" hidden>
+	<h2 class="slide__title gj-hero">Further reading</h2>
+	<ul>
+		<li><a href="https://gridbyexample.com/">https://gridbyexample.com/</a></li>
+		<li><a href="https://labs.jensimmons.com/">https://labs.jensimmons.com/</a></li>
+	</ul>
+
+	{% include 'shared/slide/footer.html' %}
+</div>
+
+
+<div class="slide slide--light has-vt slide--cover" id="slide-recruit" hidden>
+	<h2 class="slide__title gj-hero">We are recruiting</h2>
+	<p class="lead"><a href="https://www.valtech.com/en-gb/career/"><em>https://www.valtech.com/career/</em></a></p>
+	{% include 'shared/slide/footer.html' %}
+</div>
+
+<div class="slide slide--light has-vt slide--cover" id="slide-recruit" hidden>
+	<h2 class="slide__title gj-hero">Thank you! 🍺</h2>
+	<p class="lead">
+		<a href="https://twitter.com/gazjoy"><em>@gazjoy</em></a>
+	</p>
+
+	{% include 'shared/slide/footer.html' %}
+</div>
+
+{% endblock %}

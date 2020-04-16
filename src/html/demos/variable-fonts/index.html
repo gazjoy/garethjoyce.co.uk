@@ -1,0 +1,36 @@
+{% extends 'layouts/demo.html' %}
+
+{% block title %}
+POC Variable fonts – Gaz Joyce
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="/stylesheets/demo.css" />
+    <link rel="stylesheet" href="/stylesheets/inter-ui.css" />
+{% endblock %}
+
+{% block content %}
+
+<style>
+.var {
+  font-size: 42px;
+}
+
+@supports (font-variation-settings: normal) {
+  .var {
+    font-family: 'Inter UI var', sans-serif;
+  }
+}
+
+.hero { font-weight: 900; }
+.blurb { font-weight: 690; }
+
+</style>
+
+<div class="var">
+  <p class="hero">Variable fonts</p>
+  <p class="blurb">Variable fonts</p>
+
+  <p>Inter UI https://github.com/rsms/inter</p>
+</div>
+{% endblock %}

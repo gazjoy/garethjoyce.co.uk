@@ -1,18 +1,28 @@
 {% from 'macros/helpers.html' import sprite %}
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <title>{% block title %}{{ title }}{% endblock %}</title>
-    <link rel="stylesheet" href="stylesheets/app.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Gaz Joyce is a user centered interface and interaction designer">
+    {% block head %}
+    <link rel="stylesheet" href="/stylesheets/app.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,900,900i" rel="stylesheet">
+    {% endblock %}
     {% include "shared/app-icons.html" %}
-    {% block head %}{% endblock %}
   </head>
-  <body>
-    {% block content %}{% endblock %}
+  <body class="{{ bodyClasses }}">
+    {% include "shared/skip-link.html" %}
+    <div class="container">
+      {% include "shared/header.html" %}
+      <main role="main" id="main-content">
+        {% block content %}{% endblock %}
+      </main>
+      {% include "shared/footer.html" %}
+    </div>
     {% block javascript %}
-      <script src="javascripts/app.js"></script>
+    <script src="/javascripts/app.js"></script>
     {% endblock %}
   </body>
 </html>

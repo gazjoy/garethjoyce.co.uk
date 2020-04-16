@@ -1,0 +1,53 @@
+{% extends 'layouts/demo.html' %}
+
+{% block title %}
+#5 – Using grid-template-areas - CSS Grid - Demos – Gaz Joyce
+{% endblock %}
+
+{% block content %}
+
+<a href="./" class="gj-back-link">&larr; Back</a>
+<h1>#5 – Using grid-template-areas</h1>
+
+<div class="grid">
+  <div class="item">1</div>
+  <div class="item">2</div>
+  <div class="item">3</div>
+  <div class="item">4</div>
+  <div class="item">5</div>
+  <div class="item">6</div>
+</div>
+
+<style style="
+  display: inline-block;
+  background: #222;
+  padding: 1em;
+  white-space: pre;
+  font-family: monospace;
+  border-radius: 5px;
+  margin: 5em 0;
+  ">.grid {
+  display: grid;
+  gap: 1em;
+  grid-auto-rows: minmax(100px, 1fr);
+  grid-template-areas:
+  	"a a a ."
+  	"b b . c"
+  	"b b . c";
+}
+
+.item:nth-child(1) {
+  grid-area: a;
+}
+
+.item:nth-child(3) {
+  grid-area: b;
+}
+
+.item:nth-child(6) {
+  grid-area: c;
+}
+
+</style>
+
+{% endblock %}

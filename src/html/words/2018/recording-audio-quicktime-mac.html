@@ -1,0 +1,58 @@
+{% extends 'layouts/application.html' %}
+
+{% block title %}
+Screen recording with audio on Mac – Words – Gaz Joyce
+{% endblock %}
+
+{% block content %}
+<article class="gj-article">
+	<header class="gj-article__header">
+		<h1>Screen recording with audio using QuickTime on Mac</h1>
+		<p>31 December 2018</p>
+	</header>
+
+	<p>Recently I was testing a service I was working on as a keyboard only user with my screen turned off and fell into a dreaded <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/keyboard-operation-trapping.html">keyboard trap</a>.</p>
+
+	<p>The need arose to demo the problem to my team. I am not a huge fan of live demos so I wanted to do a screen recording of the problem as not being the most proficient VoiceOver on Safari user I felt it to be a safer, more productive way to show the problem.</p>
+
+	<p>Initially I thought that QuickTime would be able to do what I needed to so I fired it up and began recording with VoiceOver on. In QuickTime, go to "File" then "New Screen Recording" then enable VoiceOver with <kbd>cmd</kbd> + <kbd>F5</kbd>.</p>
+
+	<figure>
+		<img alt="Screenshot of QuickTime user interface" src="/images/screens/Screen Shot 2018-12-11 at 20.06.35.png" width="415" height="225" />
+		<figcaption><i>Fig #1.</i> Fire up QuickTime 🔥</figcaption>
+	</figure>
+
+	<p>Upon testing my first recording I realised I couldn't hear VoiceOver, there was no audio recording. After a brief hunt around for an answer I realised that QuickTime didn't exactly work as I was expecting. There is no in built audio recording capability in QuickTime.</p>
+
+	<h2>The solution: Soundflower</h2>
+	<p>Luckily I found a solution in the form of <a href="https://github.com/mattingalls/Soundflower">Soundflower</a>. This little gem of software enables you to direct the audio internally on your Mac. Before installing you need to make sure that you read the instructions first as you have to allow the application to be installed via "System Preferences" and "Security & Privacy".</p>
+
+	<p>Once Soundflower is installed you will need to make sure that the output speaker is set to the same source as the "Microphone" in the screen recording settings.</p>
+
+	<h3>Firstly set the output device</h3>
+	<p>Set the output device to "Soundflower (2ch)"</p>
+
+
+	<figure>
+		<img alt="Screenshot of sound preferences user interface" src="/images/screens/Screen Shot 2018-12-11 at 20.44.33.png" width="800" height="363" />
+		<figcaption><i>Fig #2.</i> Set the output device 🔊</figcaption>
+	</figure>
+	
+	<h3>Next set the microphone in QuickTime</h3>
+	<p>Back over in QuickTime, set the microphone to "Soundflower (2ch)" to match the output device of the system. This forces the Mac to use an internal source for the audio in the screen recording. Unfortunately this means you can't hear the audio when recording your screen.</p>
+
+
+	<figure>
+		<img alt="Screenshot of QuickTime user interface showing microphone settings" src="/images/screens/Screen Shot 2018-12-11 at 20.49.49.png" width="415" height="271" />
+		<figcaption><i>Fig #3.</i> Set the microphone 🎤</figcaption>
+	</figure>
+
+	<p>Although not perfect Soundflower did the job and I was able to record VoiceOver. Turns out I didn't need to demo the issue after all but I didn't want to lose the effort put into getting it working so I hope this helps you.</p>
+
+	<p class="lead">Flower power 🌸</p>
+
+	<hr>
+
+	<p><small>The solution in this article was tested on macOS High Sierra 10.13.6.</small></p>
+</article>
+{% endblock %}
