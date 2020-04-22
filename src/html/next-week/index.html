@@ -1,17 +1,117 @@
-{% extends 'layouts/application.html' %}
+{% extends 'layouts/no-nav.html' %}
 
 {% block title %}
 Next week – Gaz Joyce
 {% endblock %}
 
 {% block content %}
-  <h1>Next week</h1>
+  <h1>What will you be doing <br>next week?</h1>
 
-  <form name="Next week" enctype="application/x-www-form-urlencoded" netlify>
-    <label for="fname">First name:</label>
-    <input type="text" id="fname" name="fname"><br><br>
-    <label for="lname">Last name:</label>
-    <input type="text" id="lname" name="lname"><br><br>
-    <input type="submit" value="Submit">
+  <p>It is really important we keep the bench report up to date. Try and complete this form by 5pm on Thursday each week.</p>
+
+  <form name="Next week" enctype="application/x-www-form-urlencoded" netlify class="u-space-xl-bottom" style="max-width: 380px;" action="sent" method="post">
+    <fieldset class="field-group">
+      <legend class="u-visually-hidden">Name</legend>
+        <label for="name">
+          Name
+          <span class="hint">Enter your full name</span>
+        </label>
+        <input type="text" id="name" name="Name">
+    </fieldset>
+
+    <hr>
+
+    <div class="clone">
+      <fieldset class="field-group">
+        <legend class="u-visually-hidden">Activity</legend>
+          <label for="activity">
+            What will you be working on?
+            <span class="hint">For example: NHS Login</span>
+          </label>
+          <input type="text" id="activity" name="Activity">
+      </fieldset>
+
+      <fieldset class="field-group">
+        <legend class="u-visually-hidden">Days</legend>
+        <label for="days">
+          How long will you work on this?
+          <span class="hint">Enter whole days</span>
+        </label>
+        <input type="text" id="days" name="Days" style="max-width: 6ex;">
+      </fieldset>
+
+      <fieldset class="u-space-none-bottom">
+        <legend>What sort of work is this?</legend>
+        <div class="field-group">
+            <label for="workType1">
+                <input id="workType1" name="Type" type="radio" class="radio" value="Billable">
+                A billable project <span class="hint">For example: Euromonitor</span>
+            </label>
+        </div>
+        <div class="field-group">
+            <label for="workType2">
+                <input id="workType2" name="Type" type="radio" class="radio" value="Non-billable">
+                A non-billable project <span class="hint">For example: Euromonitor</span>
+            </label>
+        </div>
+        <div class="field-group">
+            <label for="workType3">
+                <input id="workType3" name="Type" type="radio" class="radio" value="Pre-sales">
+                Pre-sales
+                <span class="hint">For example: helping prepare a pitch</span>
+            </label>
+        </div>
+        <div class="field-group">
+            <label for="workType4">
+                <input id="workType4" name="Type" type="radio" class="radio" value="Marketing">
+                Marketing
+                <span class="hint">For example: writing blog post or publication</span>
+            </label>
+        </div>
+        <div class="field-group">
+            <label for="workType5">
+                <input id="workType5" name="Type" type="radio" class="radio" value="I don't know">
+                I don't know
+            </label>
+        </div>
+
+      </fieldset>
+
+
+
+      <hr>
+
+      <fieldset class="field-group">
+          <legend class="u-visually-hidden">Notes</legend>
+          <label for="notes">
+            Anything to add?
+          </label>
+          <textarea id="notes" rows="5" cols="48" name="Notes"></textarea>
+      </fieldset>
+    </div><!--/ end clone -->
+
+<!--     <div class="cloned"></div>
+
+    <a href="#" class="add-more-btn">Add</a> -->
+
+    <input type="submit" class="btn btn--primary" value="Send it" /><!-- 
+    <button type="submit" class="btn btn--primary">Send it</button> -->
   </form>
+
+<!--   <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+  <script type="text/javascript">
+      $(document).on('ready', function() {
+
+        $('.add-more-btn').click(function(e) {
+          e.preventDefault();
+          alert('here');
+          var clone = $('form').clone('.clone');
+          $('.cloned').append(clone);
+        });
+
+      });
+
+  </script> -->
+
+
 {% endblock %}

@@ -1,4 +1,12 @@
 /**
+ * Button
+ */
+
+@function button($button: 'base', $state: 'default', $var: 'color') {
+    @return map-get(map-get(map-get($buttons, $button), $state), $var);
+}
+
+/**
  * Color
  */
 
