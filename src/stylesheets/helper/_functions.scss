@@ -53,3 +53,11 @@ $typescale-calc: (
 @function spacing($value: 'base') {
     @return map-get($spacing, $value);
 }
+
+/**
+ * Gutter
+ */
+
+@function gutter($value: 'base') {
+    @return map-get($gutters, $value);
+}

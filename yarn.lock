@@ -1148,6 +1148,56 @@ binaryextensions@2:
   resolved "https://registry.yarnpkg.com/binaryextensions/-/binaryextensions-2.1.2.tgz#c83c3d74233ba7674e4f313cb2a2b70f54e94b7c"
   integrity sha512-xVNN69YGDghOqCCtA6FI7avYrr02mTJjOgB0/f1VPD3pJC8QEvjTKWc4epDx8AqxxA75NI0QpVM2gPJXUbE4Tg==
 
+blendid@^4.5.3:
+  version "4.5.3"
+  resolved "https://registry.yarnpkg.com/blendid/-/blendid-4.5.3.tgz#59c417dc9e55625a4d17e2f61441d6e32b869602"
+  integrity sha512-y0CQV536q0o0pQTn7+rKb8H6h8yey0rey6gFM4fMbDaCTwYiCDGpeATax9MZyyRtXjemFkOHtFOihoJXD9e7Ag==
+  dependencies:
+    ansi-colors "^3.2.4"
+    autoprefixer "^9.6.0"
+    babel-core "^6.26.3"
+    babel-loader "^7.1.1"
+    babel-preset-env "^1.7.0"
+    babel-preset-stage-1 "^6.24.1"
+    browser-sync "^2.26.3"
+    cssnano "^4.1.10"
+    del "4.0.0"
+    es6-promise "^4.2.6"
+    fancy-log "^1.3.3"
+    gulp "3.9.1"
+    gulp-changed "^3.2.0"
+    gulp-data "1.3.1"
+    gulp-gh-pages "0.5.4"
+    gulp-htmlmin "5.0.1"
+    gulp-if "2.0.2"
+    gulp-notify "^3.2.0"
+    gulp-nunjucks-render "^2.2.2"
+    gulp-postcss "^8.0.0"
+    gulp-rename "^1.4.0"
+    gulp-replace "^1.0.0"
+    gulp-rev "9.0.0"
+    gulp-rev-delete-original "^0.2.3"
+    gulp-rev-rewrite "^1.1.4"
+    gulp-sass "^4.0.2"
+    gulp-sequence "1.0.0"
+    gulp-sizereport "1.2.1"
+    gulp-sourcemaps "^2.6.5"
+    gulp-svgstore "7.0.1"
+    gulp-twig "^1.2.0"
+    js-yaml "^3.13.1"
+    lodash "^4.17.11"
+    merge-stream "^1.0.1"
+    minimist "^1.2.0"
+    node-fs-extra "^0.8.2"
+    node-sass-glob-importer "^5.3.0"
+    open "0.0.5"
+    plugin-error "^1.0.1"
+    pretty-hrtime "1.0.3"
+    require-dir "1.2.0"
+    webpack "^3.4.1"
+    webpack-dev-middleware "^1.12.0"
+    webpack-hot-middleware "^2.18.2"
+
 blob@0.0.5:
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/blob/-/blob-0.0.5.tgz#d680eeef25f8cd91ad533f5b01eed48e64caf683"
@@ -4458,6 +4508,11 @@ istextorbinary@2.2.1:
     binaryextensions "2"
     editions "^1.3.3"
     textextensions "2"
+
+jquery@^3.5.0:
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.5.0.tgz#9980b97d9e4194611c36530e7dc46a58d7340fc9"
+  integrity sha512-Xb7SVYMvygPxbFMpTFQiHh1J7HClEaThguL15N/Gg37Lri/qKyhRGZYzHRyLH8Stq3Aow0LsHO2O2ci86fCrNQ==
 
 js-base64@^2.1.8:
   version "2.5.1"

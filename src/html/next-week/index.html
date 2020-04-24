@@ -4,43 +4,106 @@
 Next week – Gaz Joyce
 {% endblock %}
 
+{% set bodyClasses = 'has-full-width' %}
+
 {% block content %}
   <h1>What will you be doing <br>next week?</h1>
 
   <p>It is really important we keep the bench report up to date. Try and complete this form by 5pm on Thursday each week.</p>
 
-  <form name="Next week" enctype="application/x-www-form-urlencoded" netlify class="u-space-xl-bottom" style="max-width: 380px;" action="sent" method="post">
-    <fieldset class="field-group">
-      <legend class="u-visually-hidden">Name</legend>
-        <label for="name">
-          Name
-          <span class="hint">Enter your full name</span>
-        </label>
-        <input type="text" id="name" name="Name">
-    </fieldset>
+  <form name="Next week" enctype="application/x-www-form-urlencoded" netlify class="u-space-xl-bottom" action="sent" method="post">
 
-    <hr>
+    <div class="grid g-gutter">
+        <div class="g-col-md-4">
 
-    <div class="clone">
-      <fieldset class="field-group">
-        <legend class="u-visually-hidden">Activity</legend>
-          <label for="activity">
-            What will you be working on?
-            <span class="hint">For example: NHS Login</span>
-          </label>
-          <input type="text" id="activity" name="Activity">
+          <fieldset class="field-group">
+            <legend class="u-visually-hidden">Name</legend>
+              <label for="name">Who are you?</label>
+              <select id="name" name="Name" required
+                oninvalid="this.setCustomValidity('I need a name')"
+                oninput="this.setCustomValidity('')">
+                <option value="">Your name</option>
+                <option value="Lydia Livingston">Lydia Livingston</option>
+                <option value="Shai Bowman">Shai Bowman</option>
+                <option value="Simon Pursey">Simon Pursey</option>
+                <option value="Malcolm Seaborn">Malcolm Seaborn</option>
+                <option value="Jay Flaxman">Jay Flaxman</option>
+                <option value="Fergus Roche">Fergus Roche</option>
+                <option value="Dominic Hurst">Dominic Hurst</option>
+                <option value="Carolyn Warburton">Carolyn Warburton</option>
+                <option value="Sabrina Duda">Sabrina Duda</option>
+                <option value="Veena Verdi">Veena Verdi</option>
+                <option value="Marion Bayle">Marion Bayle</option>
+                <option value="Nissa Black">Nissa Black</option>
+                <option value="Henry Neves-Charge">Henry Neves-Charge</option>
+                <option value="Gareth Joyce">Gareth Joyce</option>
+                <option value="Ian Huckvale">Ian Huckvale</option>
+                <option value="Tylen St Hilaire">Tylen St Hilaire</option>
+                <option value="Ben Brand">Ben Brand</option>
+              </select>
+          </fieldset>
+
+        </div>
+    </div>
+
+
+      <hr>
+
+      <div class="grid g-gutter">
+          <div class="g-col-md-6">
+            <h3>What task will you be working on?</h3>
+          </div>
+      </div>
+
+      <fieldset class="field-group clone" id="task">
+        <legend class="u-visually-hidden">Task #1</legend>
+
+        <div class="grid g-gutter">
+          <div class="g-col-md-6">
+
+            <label for="activity">
+              Name of task
+              <span class="hint">For example: NHS Login</span>
+            </label>
+            <input type="text" id="activity" name="Activity" required
+              oninvalid="this.setCustomValidity('I need a task')"
+              oninput="this.setCustomValidity('')">
+
+          </div>
+          <div class="g-col-xs-6 g-col-md-3">
+
+
+            <label for="taskType1">
+              Task type
+              <span class="hint">What sort of task is this?</span>
+            </label>
+            <select id="taskType1" name="Type">
+              <option value="Billable">A billable project</option>
+              <option value="Non-billable">A non-billable project</option>
+              <option value="Pre-sales">Pre-sales</option>
+              <option value="Marketing">Marketing</option>
+            </select>
+
+          </div>
+          <div class="g-col-xs-6 g-col-md-3">
+
+            <label for="days">
+              How many days?
+              <span class="hint">Roughly</span>
+            </label>
+            <select id="days" name="Days">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+
+          </div>
+        </div>
       </fieldset>
 
-      <fieldset class="field-group">
-        <legend class="u-visually-hidden">Days</legend>
-        <label for="days">
-          How long will you work on this?
-          <span class="hint">Enter whole days</span>
-        </label>
-        <input type="text" id="days" name="Days" style="max-width: 6ex;">
-      </fieldset>
-
-      <fieldset class="u-space-none-bottom">
+<!--       <fieldset class="u-space-none-bottom">
         <legend>What sort of work is this?</legend>
         <div class="field-group">
             <label for="workType1">
@@ -74,44 +137,40 @@ Next week – Gaz Joyce
                 I don't know
             </label>
         </div>
-
-      </fieldset>
-
+      </fieldset> -->
 
 
-      <hr>
+    <div class="cloned"></div>
 
-      <fieldset class="field-group">
-          <legend class="u-visually-hidden">Notes</legend>
-          <label for="notes">
-            Anything to add?
-          </label>
-          <textarea id="notes" rows="5" cols="48" name="Notes"></textarea>
-      </fieldset>
-    </div><!--/ end clone -->
+    <div class="grid g-gutter">
+      <div class="g-col-xs-12">
+        <p><a href="#" class="add-more-btn">+ Add another task</a></p>
+      </div>
+    </div>
 
-<!--     <div class="cloned"></div>
+    <hr>
 
-    <a href="#" class="add-more-btn">Add</a> -->
+    <div class="grid g-gutter">
+      <div class="g-col-md-6">
 
-    <input type="submit" class="btn btn--primary" value="Send it" /><!-- 
+        <fieldset class="field-group">
+            <legend class="u-visually-hidden">Notes</legend>
+            <label for="notes">
+              Anything to add?
+            </label>
+            <textarea id="notes" rows="5" cols="48" name="Notes"></textarea>
+        </fieldset>
+
+        <br>
+        <input type="submit" class="btn btn--primary" value="Send it" />
+      </div>
+    </div>
+    
+    
+
+    <!-- 
     <button type="submit" class="btn btn--primary">Send it</button> -->
   </form>
-
-<!--   <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
-  <script type="text/javascript">
-      $(document).on('ready', function() {
-
-        $('.add-more-btn').click(function(e) {
-          e.preventDefault();
-          alert('here');
-          var clone = $('form').clone('.clone');
-          $('.cloned').append(clone);
-        });
-
-      });
-
-  </script> -->
 
 
 {% endblock %}
