@@ -1,0 +1,22 @@
+{% extends 'layouts/application.html' %}
+
+{% block title %}
+Dates – Gaz Joyce
+{% endblock %}
+
+{% block content %}
+  <h1>Dates using <a href="https://date-fns.org/">date-fns</a></h1>
+
+  <p>It is exactly <span class="date-fns" id="dateNow"></span>.</p>
+
+  <p>Tomorrow is <span class="date-fns" id="dateTomorrow"></span>.</p>
+
+  <p>I am <span class="date-fns" id="dateMyAge"></span> young.</p>
+
+{% endblock %}
+
+
+{% block javascript %}
+<script src="/javascripts/app.js"></script>
+<script src="/javascripts/date.js"></script>
+{% endblock %}
