@@ -2,15 +2,16 @@
 <html>
     <head>
         {% include "head.html" %}
-        {% block head %}
-        {% endblock %}
+        {% block head %}{% endblock %}
     </head>
     
     <body class="{{ bodyClass }}">
         <header>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="contact">Contact</a></li>
+            {#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
+            <ul class="nav">
+            {%- for entry in collections.all | eleventyNavigation %}
+                <li class="nav-item{% if entry.url == page.url %} nav-item-active{% endif %}"><a href="{{ entry.url | url }}">{{ entry.title }}</a></li>
+            {%- endfor %}
             </ul>
         </header>
 
@@ -18,5 +19,7 @@
 
         {{ content | safe }}
         </main>
+
+        {% block bodyEnd %}{% endblock %}
     </body>
 </html>

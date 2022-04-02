@@ -1,5 +1,56 @@
 @import url('./reset.css');
 
+:root {
+
+    /* palette */
+    --dark: #2f4454;
+    --deep: #2e151b;
+    --light: #da7b93;
+    --slate: #376e6f;
+    --dull: #1c3334;
+
+    color-scheme: light;
+    --theme-bg: #fafafa;
+    --theme-on-bg: var(--dark);
+    --theme-offset-bg: #bebebe;
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      --theme-bg: var(--dark);
+      --theme-on-bg: #fafafa;
+      --theme-offset-bg: #7a7a7a;
+    }
+  }
+  
+  [color-scheme="light"] {
+    color-scheme: light;
+    --theme-bg: #fafafa;
+    --theme-on-bg: #000000;
+    --theme-offset-bg: #bebebe;
+  }
+  
+  [color-scheme="dark"] {
+    color-scheme: dark;
+    --theme-bg: #000000;
+    --theme-on-bg: #fafafa;
+    --theme-offset-bg: #7a7a7a;
+  }
+  
+  /* Important! Be sure to use the variables on your body tag */
+  body {
+    background-color: var(--theme-bg);
+    color: var(--theme-on-bg);
+    font-family: monaco,Consolas,Lucida Console,monospace; 
+  }
+
+
 .stylish {
     background-color: gainsboro;
+}
+
+
+h1 {
+    color: var(--light);
 }

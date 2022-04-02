@@ -1,10 +1,24 @@
 ---
 layout: layouts/base.html
 title: "Home #1"
-bodyClass: stylish
+bodyClass: llstylish
+eleventyNavigation:
+  key: Home
+  order: 1
 ---
 
 <h1>{{ title }}</h1>
 
 <p>Hi</p>
 <p>there</p>
+
+<img alt="" src="/img/gaz.jpeg" width="200" />
+
+{% set maxPosts = collections.posts.length | min(3) %}
+<h2>Latest {% if maxPosts == 1 %}Post{% else %}{{ maxPosts }} Posts{% endif %}</h2>
+
+{% set postslist = collections.posts | head(-3) %}
+{% set postslistCounter = collections.posts | length %}
+{% include "postslist.html" %}
+
+<p>More posts can be found in <a href="{{ '/posts/' | url }}">the archive</a>.</p>
