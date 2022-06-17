@@ -15,10 +15,17 @@ eleventyNavigation:
 <img alt="" src="/img/gaz.jpeg" width="200" />
 
 {% set maxPosts = collections.posts.length | min(3) %}
-<h2>Latest {% if maxPosts == 1 %}Post{% else %}{{ maxPosts }} Posts{% endif %}</h2>
+<h2>Latest {% if maxPosts == 1 %}post{% else %}{{ maxPosts }} posts{% endif %}</h2>
 
 {% set postslist = collections.posts | head(-3) %}
 {% set postslistCounter = collections.posts | length %}
 {% include "postslist.html" %}
 
 <p>More posts can be found in <a href="{{ '/posts/' | url }}">the archive</a>.</p>
+
+<h2>Colours</h2>
+<div class="swatch bg-dark"></div>
+<div class="swatch bg-light"></div>
+<div class="swatch bg-slate"></div>
+<div class="swatch bg-dull"></div>
+<div class="swatch bg-deep"></div>

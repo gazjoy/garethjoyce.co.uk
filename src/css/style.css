@@ -54,3 +54,24 @@
 h1 {
     color: var(--light);
 }
+
+.swatch {
+  width: 3em;
+  height: 3em;
+  border: 1px solid white;
+}
+.bg-dark {
+  background-color: var(--dark);
+}
+.bg-deep {
+  background-color: var(--deep);
+}
+.bg-light {
+  background-color: var(--light);
+}
+.bg-dull {
+  background-color: var(--dull);
+}
+.bg-slate {
+  background-color: var(--slate);
+}
