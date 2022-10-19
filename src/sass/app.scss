@@ -1,0 +1,200 @@
+// Reset
+@import "reset";
+
+// Constants
+@import "const";
+
+// Helpers
+@import "helper/functions";
+@import "helper/breakpoint";
+@import "helper/button";
+@import "helper/grid";
+@import "helper/flex";
+
+/**
+ * Button
+ */
+
+$buttons: (
+    base: (
+        default: (
+            background          : color(neutral, darkest),
+            border-color        : color(neutral, darkest),
+            color               : color(neutral, white)
+        ),
+        hover: (
+            background          : color(neutral, dark),
+            border-color        : color(neutral, dark),
+            color               : color(neutral, white)
+        )
+    ),
+    primary: (
+        default: (
+            background          : color(primary, pink),
+            border-color        : color(primary, pink),
+            color               : color(neutral, white)
+        ),
+        hover: (
+            // background          : darken(color(primary, "pink"), 20%),
+            // border-color        : darken(color(primary, "pink"), 20%),
+            color               : color(neutral, white)
+        )
+    )
+);
+
+/**
+ * Visibility
+ */
+
+$visibility: (
+    block,
+    inline,
+    inline-block
+);
+
+// Base
+// @import "base/form";
+@import "base/frame";
+@import "base/heading";
+@import "base/horizontal-rule";
+@import "base/image";
+@import "base/list";
+@import "base/typography";
+
+// Components
+@import "component/button";
+@import "component/skip-link";
+@import "component/logo";
+@import "component/header";
+@import "component/footer";
+@import "component/article";
+@import "component/list-block";
+@import "component/field-group";
+@import "component/select";
+
+// Utility
+@import "utility/color";
+@import "utility/image";
+@import "utility/grid";
+@import "utility/separator";
+@import "utility/space";
+@import "utility/visible";
+
+body {
+	padding: 10px;
+}
+
+// To tidy up
+.container {
+	padding: 8vw;
+}
+
+p,
+.container {
+	max-width: 84ch;
+}
+
+
+// Prism overrides
+code[class*="language-"],
+pre[class*="language-"] {
+	margin-top: 0;
+	margin-bottom: 1.6em;
+}
+
+
+.has-grid-article {
+	.container {
+		padding: 0;
+		max-width: none;
+		@include breakpoint(screen(md)) {
+			display: grid;
+		}
+	}
+
+	.gj-header {
+		grid-column: 1 / -1;
+		grid-row: 1 / 2;
+		align-self: flex-start;
+		padding: 8vw 8vw 0 8vw;
+		border-bottom: 5px solid color(primary, darker-pink);
+		margin-bottom: 0;
+		padding-bottom: 2em;
+
+		@include breakpoint(screen(md)) {
+			position: relative;
+			padding: 1em;
+			background-color: color(neutral, white);
+			margin: 8vw 0 0 8vw;
+			padding: 1em;
+		}
+	}
+
+	main {
+		grid-column: 1 / -1;
+		grid-row: 1 / 2;
+	}
+
+	.gj-footer {
+		padding-left: 8vw;
+	}
+}
+
+.has-full-width {
+	.container {
+		max-width: none;
+	}
+}
+
+.date-fns {
+	background-color: black;
+	color: white;
+	padding: 2px 6px;
+}
+
+.gj-profile {
+
+	margin-bottom: 1rem;
+
+	@include breakpoint(screen(sm)) {
+		width: 40%;
+		max-width: 300px;
+		float: right;
+		margin-left: 2rem;
+	}
+
+	@include breakpoint(screen(lg)) {
+		margin-right: -10rem;
+	}
+	@include breakpoint(screen(xl)) {
+		margin-right: -20rem;
+	}
+}
+
+
+.gj-timeline {
+	border-left: 3px solid color(primary, darker-pink);
+	list-style-type: none;
+	padding: 0;
+
+	em {
+		font-weight: bold;
+	}
+
+	li {
+		margin: 2em 0;
+		padding-left: 1.125em;
+		position: relative;
+		top: -.6em;
+	}
+	
+	li::before {
+		background-color: color(primary, darker-pink);
+		content: '';
+		height: 3px;
+		left: 0;
+		position: absolute;
+		top: .6em;
+		width: 10px;
+	}
+}

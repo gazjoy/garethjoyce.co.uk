@@ -6,19 +6,34 @@
     </head>
     
     <body class="{{ bodyClass }}">
-        <header>
-            {#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
-            <ul class="nav">
-            {%- for entry in collections.all | eleventyNavigation %}
-                <li class="nav-item{% if entry.url == page.url %} nav-item-active{% endif %}"><a href="{{ entry.url | url }}">{{ entry.title }}</a></li>
-            {%- endfor %}
-            </ul>
-        </header>
+        <a href="#main-content" class="gj-skip-link">Skip to content</a>
+        <div class="container">
 
-        <main id="main-content">
+            <header role="banner" class="gj-header">
+                <a href="/" class="logo">
+                    <div class="cube show-left">
+                    <div class="cube__face cube__face--front">A</div>
+                    <div class="cube__face cube__face--back">A</div>
+                    <div class="cube__face cube__face--right">Z</div>
+                    <div class="cube__face cube__face--left">G</div>
+                    <div class="cube__face cube__face--top">G</div>
+                    <div class="cube__face cube__face--bottom">Z</div>
+                    </div>
+                </a>
+                <nav class="gj-header__nav">
+                    <ul class="u-list-inline">
+                        {%- for entry in collections.all | eleventyNavigation %}
+                        <li class="nav-item{% if entry.url == page.url %} nav-item-active{% endif %}"><a href="{{ entry.url | url }}">{{ entry.title }}</a></li>
+                        {%- endfor %}
+                    </ul>
+                </nav>
+            </header>
 
-        {{ content | safe }}
-        </main>
+            <main id="main-content">
+            {{ content | safe }}
+            </main>
+
+        </div>
 
         {% block bodyEnd %}{% endblock %}
     </body>

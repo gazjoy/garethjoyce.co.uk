@@ -1,0 +1,54 @@
+// Reset
+@import "reset";
+
+// Constants
+@import "const";
+
+// Helpers
+@import "helper/functions";
+@import "helper/breakpoint";
+
+// Base
+// @import "base/frame";
+@import "base/heading";
+// @import "base/horizontal-rule";
+@import "base/image";
+@import "base/list";
+@import "base/typography";
+
+// Components
+// @import "component/skip-link";
+// @import "component/logo";
+
+// Utility
+@import "utility/color";
+@import "utility/image";
+@import "utility/separator";
+
+
+@import "component/slide";
+
+html {
+	scroll-behavior: smooth;
+	@include breakpoint(screen(md)) {
+		font-size: 150%;
+	}
+}
+
+.slide-nav {
+	position: fixed;
+	top: 0;
+	z-index: 10;
+}
+
+.valtech-logo {
+	width: 130px;
+	// float: right;
+	display: none;
+}
+
+.has-demo.has-img {
+	.slide--demo {
+		object-fit: cover;
+	}
+}

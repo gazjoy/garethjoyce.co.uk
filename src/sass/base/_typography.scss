@@ -1,0 +1,133 @@
+$text-color 									: color(neutral, darkest);
+$selection-background-color 	: color(primary, pink);
+$selection-color 							: color(neutral, white);
+$link-accent 									: color(primary, dark-pink);
+$focus-accent 								: color(primary, focus);
+$off-white 										: color(neutral, lightest);
+$blockquote-border-color			: color(primary, dark-pink);
+
+
+html,
+input {
+	line-height: $line-height;
+}
+
+html {
+	font-size: $font-size;
+  font-family: $font-family;
+	// @include breakpoint( screen(xl) ) {
+	// 	font-size: 120%;
+	// }
+}
+
+body {
+  color: $text-color;
+}
+
+::selection {
+    background-color: $selection-background-color;
+    color: $selection-color;
+}
+
+
+p, ul, ol, dl {
+	margin-top: 0;
+	margin-bottom: 1.6em;
+}
+
+ul {
+	padding-left: 1.2em;
+}
+
+
+a {
+	color: $link-accent;
+	&:hover {
+		color: white;
+  		background-color: $link-accent;
+  		outline: 3px solid $link-accent;
+  		text-decoration: none;
+	}
+	&:focus {
+		outline: 3px solid $focus-accent;
+		text-decoration: none;
+	}
+	&:active {
+		background-color: $link-accent;
+  		outline: 3px solid $link-accent;
+  		color: white;
+	}
+}
+
+@include breakpoint( screen(md) ) {
+	.lead {
+		font-size: 1.2em;
+	}
+}
+
+dfn {
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+
+code {
+    font-size: 1rem;
+    color: $link-accent;
+    word-break: break-word;
+}
+
+.code {
+	background-color: rgba(0,0,0,0.8);
+	color: $off-white;
+	// white-space: nowrap;
+	border-radius: 3px;
+}
+
+.code-block {
+	padding: 1em;
+}
+
+blockquote {
+	border-left: 10px solid $blockquote-border-color;
+	font-style: italic;
+	margin-left: 0;
+	padding-left: spacing(lg);
+	@include breakpoint( screen(lg) ) {
+		margin-left: -2em;
+	}
+}
+
+
+.gj-hero {
+	font-size: 500%;
+}
+
+.gj-small {
+	font-size: $font-size-sm;
+}
+
+.gj-xsmall {
+	font-size: $font-size-xs;
+}
+
+.gj-xxsmall {
+	font-size: $font-size-xxs;
+}
+
+.highlighter {
+	background-color: color(primary, pink);
+	padding-left: spacing(px-lg);
+	padding-right: spacing(px-lg);
+}
+
+.hint {
+    font-weight: 400;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.25;
+    display: block;
+    margin-bottom: 15px;
+    color: #626a6e;
+}

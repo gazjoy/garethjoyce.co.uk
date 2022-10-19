@@ -1,0 +1,79 @@
+@use "sass:math";
+$cube-size: 3rem;
+$cube-left-color: color(primary, pink);
+$cube-front-color: color(primary, dark-pink);
+$cube-right-color: color(primary, darker-pink);
+
+.logo,
+.logo * {
+  box-sizing: border-box;
+}
+
+.logo {
+  display: block;
+  position: relative;
+  width: $cube-size;
+  height: $cube-size;
+  perspective: 160px;
+  background-color: transparent;
+
+  &:hover {
+    background-color: transparent;
+    outline: none;
+    .cube { transform: translateZ(math.div(-$cube-size, 2)) rotateY(-90deg); }
+  }
+  &:focus {
+    .cube { transform: translateZ(math.div(-$cube-size, 2)) rotateY(-90deg); }
+  }
+}
+
+.cube {
+  width: $cube-size;
+  height: $cube-size;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: translateZ(math.div($cube-size, 2));
+  transition: transform .7s ease-in-out;
+  // animation: 20s infinite alternate twist;
+}
+
+.cube.show-front  { transform: translateZ(math.div(-$cube-size, 2)) rotateY(   0deg); }
+.cube.show-right  { transform: translateZ(math.div(-$cube-size, 2)) rotateY( -90deg); }
+.cube.show-back   { transform: translateZ(math.div(-$cube-size, 2)) rotateY(-180deg); }
+.cube.show-left   { transform: translateZ(math.div(-$cube-size, 2)) rotateY(  90deg); }
+.cube.show-top    { transform: translateZ(math.div(-$cube-size, 2)) rotateX( -90deg); }
+.cube.show-bottom { transform: translateZ(math.div(-$cube-size, 2)) rotateX(  90deg); }
+
+.cube__face {
+  position: absolute;
+  width: $cube-size;
+  height: $cube-size;
+  line-height: $cube-size;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+.cube__face--front  { background: $cube-front-color; }
+.cube__face--right  { background: $cube-right-color; }
+// .cube__face--back   { background: hsla(120, 100%, 50%, 1); }
+.cube__face--left   { background: $cube-left-color; }
+// .cube__face--top    { background: hsla(240, 100%, 50%, 1); }
+// .cube__face--bottom { background: hsla(300, 100%, 50%, 1); }
+
+.cube__face--front  { transform: rotateY(  0deg) translateZ(math.div($cube-size, 2)); }
+.cube__face--right  { transform: rotateY( 90deg) translateZ(math.div($cube-size, 2)); }
+.cube__face--back   { transform: rotateY(180deg) translateZ(math.div($cube-size, 2)); }
+.cube__face--left   { transform: rotateY(-90deg) translateZ(math.div($cube-size, 2)); }
+.cube__face--top    { transform: rotateX( 90deg) translateZ(math.div($cube-size, 2)); }
+.cube__face--bottom { transform: rotateX(-90deg) translateZ(math.div($cube-size, 2)); }
+
+@keyframes twist {
+  0% {
+    transform: translateZ(math.div(-$cube-size, 2)) rotateY(  90deg);
+  }
+  100% {
+    transform: translateZ(math.div(-$cube-size, 2)) rotateY(  -90deg);
+  }
+}

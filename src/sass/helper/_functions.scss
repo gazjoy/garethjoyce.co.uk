@@ -1,0 +1,64 @@
+@use "sass:math";
+/**
+ * Button
+ */
+
+@function button($button: 'base', $state: 'default', $var: 'color') {
+    @return map-get(map-get(map-get($buttons, $button), $state), $var);
+}
+
+/**
+ * Color
+ */
+
+@function color($color, $tone: 'base') {
+    @return map-get(map-get($colors, $color), $tone);
+}
+
+
+/**
+ * Screen
+ */
+
+@function screen($screen, $type: 'base') {
+    @return map-get(map-get($screens, $screen), $type);
+}
+
+/**
+ * Generating typescale calculations
+ */
+
+$typescale-calc: (
+    min: math.div(1, map-get($typescale, min)) * 1em,
+    max: math.div(1, map-get($typescale, max)) * 1em
+);
+
+
+/**
+ * Strip Unit
+ */
+
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return math.div($number, ($number * 0 + 1));
+  }
+
+  @return $number;
+}
+
+
+/**
+ * Spacing
+ */
+
+@function spacing($value: 'base') {
+    @return map-get($spacing, $value);
+}
+
+/**
+ * Gutter
+ */
+
+@function gutter($value: 'base') {
+    @return map-get($gutters, $value);
+}

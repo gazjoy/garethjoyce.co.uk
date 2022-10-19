@@ -1,0 +1,17 @@
+// Header
+
+.gj-header {
+	display: grid;
+	grid-template-columns: 3rem 1fr;
+	grid-gap: spacing(xl);
+	align-items: center;
+	margin-bottom: spacing(xl);
+	&__nav {
+		ul {
+			margin-bottom: 0;
+			> li:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+}

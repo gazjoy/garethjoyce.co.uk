@@ -1,0 +1,40 @@
+
+.gj-skip-link {
+	border: 0;
+  clip-path: inset(50%);
+  display: inline-block;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  width: 1px;
+  white-space: nowrap;
+  
+  @include breakpoint(max-width screen(xs, max)) {
+  	display: block;
+  }
+
+  @include breakpoint(screen(sm)) {
+		position: absolute;
+    z-index: 11;
+  }
+
+  &:active,
+  &:focus {
+  	clip: auto;
+    clip-path: none;
+    height: auto;
+    overflow: visible;
+    width: auto;
+    white-space: inherit;
+    background-color: $focus-accent;
+    color: color(neutral, darkest);
+    padding: 10px 1em;
+    @include breakpoint(max-width screen(xs, max)) {
+    	margin: 10px;
+    }
+    @include breakpoint(screen(sm)) {
+			margin: 0;
+    }
+  }
+}

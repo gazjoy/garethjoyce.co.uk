@@ -1,0 +1,59 @@
+// Reset
+@import "reset";
+
+// Constants
+@import "const";
+
+// Helpers
+@import "helper/functions";
+@import "helper/breakpoint";
+
+@import "base/heading";
+@import "base/list";
+@import "base/typography";
+
+// Components
+@import "component/logo";
+@import "component/header";
+
+body {
+  padding: 1vmin;
+  background-color: color(primary, dark-pink);
+  color: color(neutral, white);
+}
+
+a {
+  color: color(neutral, white);
+  &:hover {
+    color: color(primary, pink);
+    background-color: color(neutral, white);
+    outline: 3px solid color(primary, pink);
+  }
+}
+
+hr {
+  border: 0;
+  height: 2px;
+  background-color: color(neutral, white);
+  margin: 2em 0;
+}
+
+@media(min-width: 52em) {
+  body {
+    padding: 4rem 4vw;
+  }
+}
+
+.container {
+  max-width: 1220px;
+  margin: 0 auto;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5e2eb;
+  color: rgb(179, 51, 119);
+  border-radius: 2px;
+}

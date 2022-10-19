@@ -1,0 +1,17 @@
+select {
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.25;
+    box-sizing: border-box;
+    max-width: 100%;
+    min-width: 10ex;
+    height: 2.5rem;
+    padding: 5px;
+    border: 2px solid #0b0c0c;
+
+    &:focus {
+        outline: 3px solid #fd0;
+        outline-offset: 0;
+        box-shadow: inset 0 0 0 2px;
+    }
+}
