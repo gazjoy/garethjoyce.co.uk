@@ -2,14 +2,12 @@
 layout: layouts/post.html
 title: Now
 templateClass: tmpl-post
-eleventyNavigation:
-  key: Now
-  order: 2
 ---
 
 What I’m doing now
 <p>I am currently:</p>
 <ul>
+  <li>Updating this website</li>
   <li>Trying to say "no" more</li>
   <li>Prioritising family time</li>
   <li>Focussing on my mental health</li>

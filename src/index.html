@@ -1,18 +1,25 @@
 ---
 layout: layouts/base.html
-title: "My name is Gaz and I am a digital designer based in Stafford, UK."
+title: "I'm Gaz. I design digital products for people."
 bodyClass: llstylish
 ---
 
-<h1>{{ title }}</h1>
 
-<img alt="" src="/img/gaz.jpeg" width="200" />
+<h1>I'm Gaz. <span>I design digital products <br>that people can use.</span></h1>
 
+<div class="wrap prose additive-spacing">
+<p>I'm a lead design consultant at Valtech UK. I have almost 18 years of experience in the digital design industry.</p>
+<p>I take a collaborative, hypothesis based approach to my design work. I use evidence to drive certainty into assumptions 
+    and I enjoy solving complex problems and making my work accessible to everyone.</p>
+<p><a href="about" class="gj-cta">More about me</a></p>
+</div>
+
+
+<!-- 
 {% set maxPosts = collections.posts.length | min(3) %}
 <h2>Latest {% if maxPosts == 1 %}post{% else %}{{ maxPosts }} posts{% endif %}</h2>
-
 {% set postslist = collections.posts | head(-3) %}
 {% set postslistCounter = collections.posts | length %}
 {% include "postslist.html" %}
 
-<p>More posts can be found in <a href="{{ '/posts/' | url }}">the archive</a>.</p>
+<p>More posts can be found in <a href="{{ '/posts/' | url }}">the archive</a>.</p> -->

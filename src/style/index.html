@@ -2,9 +2,6 @@
 layout: layouts/base.html
 title: Style guide
 templateClass: tmpl-post
-eleventyNavigation:
-  key: Style
-  order: 5
 ---
 
 <h1>{{ title }}</h1>
@@ -13,7 +10,10 @@ eleventyNavigation:
  <a href="https://www.netlify.com/">Netlify</a> with a <a href="https://www.netlify.com/docs/webhooks/">build hook</a> 
  after each push to its <a href="https://github.com/gazjoy/garethjoyce.co.uk">GitHub repository</a>.</p>
  
- <pre class=" language-shell"><code class=" language-shell">https://github.com/gazjoy/garethjoyce.co.uk.git</code></pre>
+ {% highlight "shell" %}
+ https://github.com/gazjoy/garethjoyce.co.uk.git
+ {% endhighlight %}
+
  <hr>
  
  <h2>Font</h2>
@@ -61,9 +61,11 @@ eleventyNavigation:
 <h2>Code</h2><p>I use the <a href="https://github.com/PrismJS/prism-themes/blob/master/themes/prism-a11y-dark.css">a11y dark theme</a> 
 with <a href="https://prismjs.com/">Prism js</a> to highlight code.</p>
 
-<pre class=" language-css"><code class=" language-css"><span class="token selector">p</span> <span class="token punctuation">{</span>
-	<span class="token property">color</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
+{% highlight "css" %}
+p {
+	color: black;
+}
+{% endhighlight %}
 
 <h2>Button</h2>
 <input type="submit" value="Submit"><br>
