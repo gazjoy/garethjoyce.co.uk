@@ -8,8 +8,8 @@
     <body class="{{ bodyClass }}" id="top">
         <a href="#main-content" class="gj-skip-link">Skip to content</a>
         
-        <header role="banner" class="gj-header">
-            <div class="container insulate-top">
+        <header role="banner" class="gj-header wrapper">
+            <div class="wrapper-inner insulate">
                 <nav class="gj-header__nav">
                     <a href="/">Home</a>
                     <ul class="u-list-inline">
@@ -21,20 +21,17 @@
             </div>
         </header>
 
-        <main id="main-content" class="">
-
-            <div class="container insulate-top">
-                {% if backLink %}
-                <div>
-                    <p><a href="javascript:window.history.back()" class="gj-back-link">&larr; Back</a></p>
-                </div>
-                {% endif %}
-                {{ content | safe }}
+        <main id="main-content" class="">   
+            {% if backLink %}
+            <div>
+                <p><a href="javascript:window.history.back()" class="gj-back-link">&larr; Back</a></p>
             </div>
+            {% endif %}
+            {{ content | safe }}
         </main>
 
-        <footer role="contentinfo" class="gj-footer">
-            <div class="container insulate-top">
+        <footer role="contentinfo" class="gj-footer wrapper">
+            <div class="wrapper-inner insulate">
                 <ul class="u-list-inline">
                     <!-- <li><a href="/words">Words</a></li>
                     <li><a href="/reading">Reading</a></li>
@@ -51,8 +48,10 @@
                 </small>
                 <p>© Gaz Joyce – <a href="https://www.twitter.com/gazjoy">Twitter</a> – <a href="https://codepen.io/gazjoy/">CodePen</a></p>
                 
+                <a href="#top" class="gj-top">Skip to top</a>
+                
             </div>
-            <a href="#top" class="gj-top">Back to top</a>
+            
             
         </footer>
         {% block bodyEnd %}{% endblock %}

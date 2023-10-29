@@ -144,7 +144,6 @@ hr {
 }
 
 .container {
-	padding: 0 8vw;
   max-width: 84ch;
 }
 
@@ -320,27 +319,6 @@ hr {
 
 
 
-.gj-listing {
-
-}
-
-
-.grid {
-  display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-gap: 0 2rem;
-    align-items: start;
-}
-
-
-
-
-
-
-
-
-
-
 .gj-cta::after {
   content: " →";
 }
@@ -371,13 +349,8 @@ hr {
 /*
 Header, navigation, skip link
 */
-
-.gj-header {
-  display: flex;
-}
 .gj-header__nav {
   display: flex;
-  justify-content: space-between;
 }
 .gj-header__nav ul {
   margin-left: 2em;
@@ -416,19 +389,12 @@ Footer & top link
 */
 .gj-footer {
   font-size: 80%;
+  border-top: 2px solid green;
 }
 .gj-top {
-  display: block;
-  width: 100%;
-  padding: 1em;
   margin-top: var(--space-4);
-  background-color: var(--light);
-  color: var(--dark);
 }
-.gj-top:hover {
-  background-color: var(--dark);
-  color: var(--light);
-}
+
 .gj-top::before {
   content: "↑ ";
 }
@@ -459,6 +425,10 @@ Footer & top link
 }
 }
 
+
+/*
+Timeline
+*/
 .gj-timeline {
   border-left: 3px solid var(--light);
   list-style-type: none;
@@ -485,7 +455,168 @@ Footer & top link
   width: 10px;
 }
 
+/*
+Listing
+*/
 
+.gj-listing {
+  margin-bottom: 1.25rem;
+}
+@media screen and (min-width: 43.75rem) {
+  .gj-listing {
+    margin-bottom: 5rem;
+    position: relative;
+    top: -2.75rem;
+  }
+}
+@media screen and (min-width: 61rem) {
+  .gj-listing {
+    margin-bottom: 7.5rem;
+    top: 0;
+  }
+}
+
+.gj-listing__item {
+  margin-bottom: 1.75rem;
+  position: relative;
+}
+@media screen and (min-width: 43.75rem) {
+  .gj-listing__item {
+    margin-bottom: 3.125rem;
+  }
+}
+
+.gj-listing__img {
+  grid-column: 1/13;
+  box-sizing: border-box;
+  margin-bottom: 0.75rem;
+}
+@media screen and (min-width: 43.75rem) {
+  .gj-listing__img {
+    grid-column: 4/13;
+  }
+}
+@media screen and (min-width: 61rem) {
+  .gj-listing__img {
+    grid-column: 3/6;
+    aspect-ratio: 1;
+    object-fit: cover;
+    position: relative;
+    top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.gj-listing__img-mask {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  aspect-ratio: 16/9;
+  grid-column: 1/13;
+}
+@media screen and (min-width: 43.75rem) {
+  .gj-listing__img-mask {
+    grid-column: 4/13;
+  }
+}
+@media screen and (min-width: 61rem) {
+  .gj-listing__img-mask {
+    aspect-ratio: 1;
+    grid-column: 3/6;
+    top: 0.5rem;
+  }
+}
+
+
+.gj-listing .thumb--british-gas {
+  background-size: 105%;
+  background-position: 5% 37%;
+}
+@media screen and (min-width: 61rem) {
+  .gj-listing .thumb--british-gas {
+    background-size: auto 110%;
+    background-repeat: no-repeat;
+    background-position: 10% 55%;
+  }
+}
+
+.gj-listing__description {
+  grid-column: 1/13;
+}
+@media screen and (min-width: 43.75rem) {
+  .gj-listing__description {
+    grid-column: 4/13;
+  }
+}
+@media screen and (min-width: 61rem) {
+  .gj-listing__description {
+    grid-column: 6/13;
+  }
+}
+@media screen and (min-width: 76rem) {
+  .gj-listing__description {
+    grid-column: 6/11;
+  }
+}
+
+
+.gj-listing__description .gj-listing__date {
+  display: block;
+}
+@media screen and (min-width: 61rem) {
+  .gj-listing__description .gj-listing__date {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
+
+/*
+Grid
+*/
+
+@media screen and (min-width: 43.75rem) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 0 2rem;
+    align-items: start;
+  }
+}
+
+
+.wrapper-inner {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (min-width: 43.75rem) {
+  .wrapper-inner {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+@media screen and (min-width: 61rem) {
+  .wrapper-inner {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+@media screen and (min-width: 100rem) {
+  .wrapper-inner {
+    padding-left: 7vw;
+    padding-right: 7vw;
+  }
+}
+@media screen and (min-width: 118.75rem) {
+  .wrapper-inner {
+    padding-left: 16vw;
+    padding-right: 16vw;
+  }
+}
 
 /*
 Logo thing
