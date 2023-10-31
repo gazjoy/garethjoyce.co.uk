@@ -1,15 +1,12 @@
 ---
 layout: layouts/base.html
 title: Work
-templateClass: tmpl-post
 # eleventyNavigation:
 #   key: Work
 #   order: 4
 ---
 
-<section class="wrapper">
-    <div class="wrapper-inner">
-        <h1>Some of my work</h1>
+        <h1>{{title}}</h1>
         <ul class="u-list-unstyled gj-listing">
             <li class="grid-container gj-listing__item">
                 <img alt="" src="/img/gaz.jpeg" width="200" class="gj-listing__img" />
@@ -25,5 +22,3 @@ templateClass: tmpl-post
                 </div>
             </li>
         </ul>
-    </div>
-</section>

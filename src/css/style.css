@@ -389,7 +389,7 @@ Footer & top link
 */
 .gj-footer {
   font-size: 80%;
-  border-top: 2px solid green;
+  /* border-top: 2px solid green; */
 }
 .gj-top {
   margin-top: var(--space-4);

@@ -21,13 +21,18 @@
             </div>
         </header>
 
-        <main id="main-content" class="">   
-            {% if backLink %}
-            <div>
-                <p><a href="javascript:window.history.back()" class="gj-back-link">&larr; Back</a></p>
+        <main id="main-content" class="wrapper">
+   
+            <div class="wrapper-inner">
+                <div class="container">
+                    {% if backLink %}
+                    <div>
+                        <p><a href="javascript:window.history.back()" class="gj-back-link">&larr; Back</a></p>
+                    </div>
+                    {% endif %}
+                    {{ content | safe }}
+                </div>
             </div>
-            {% endif %}
-            {{ content | safe }}
         </main>
 
         <footer role="contentinfo" class="gj-footer wrapper">

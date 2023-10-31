@@ -1,10 +1,10 @@
 ---
-layout: layouts/post.html
-title: Now
-templateClass: tmpl-post
+layout: layouts/base.html
+title: What I’m doing now
 ---
 
-What I’m doing now
+<h1>{{ title }}</h1>
+
 <p>I am currently:</p>
 <ul>
   <li>Updating this website</li>

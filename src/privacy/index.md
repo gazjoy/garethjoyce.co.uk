@@ -1,9 +1,9 @@
 ---
-layout: layouts/post.html
+layout: layouts/base.html
 title: Your privacy
-templateClass: tmpl-post
 ---
 
+<h1>{{ title }}</h1>
 <p>I don't track you.</p>
 
 <ul><li>I am not Facebook or Google</li><li>I don't have any analytics</li><li>I don't use adverts</li><li>I don't have a "hit counter"</li><li>I make no money through this website</li><li>I am not a business</li><li>I do not use cookies on this website, I eat them</li></ul>
