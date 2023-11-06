@@ -11,7 +11,6 @@
         <header role="banner" class="gj-header wrapper">
             <div class="wrapper-inner insulate">
                 <nav class="gj-header__nav">
-                    <a href="/">Home</a>
                     <ul class="u-list-inline">
                         {%- for entry in collections.all | eleventyNavigation %}
                         <li class="nav-item{% if entry.url == page.url %} nav-item-active{% endif %}"><a href="{{ entry.url | url }}">{{ entry.title }}</a></li>
@@ -42,17 +41,20 @@
                     <li><a href="/reading">Reading</a></li>
                     <li><a href="/running">Running</a></li>
                     <li><a href="/demos">Demos</a></li>
-                    <li><a href="/talks">Talking</a></li> -->
-                    <li><a href="/now">Now</a></li>
+                    <li><a href="/talks">Talking</a></li>
+                    <li><a href="/now">Now</a></li> -->
                     <li><a href="/style">Style</a></li>
                     <li><a href="/privacy">Privacy</a></li>
                 </ul>
                 
-                <small><span>Warning:</span>
-                    <p>If you see something that looks broken, it probably is as I am currently updating this website.</p>
-                </small>
+
                 <p>© Gaz Joyce – <a href="https://www.twitter.com/gazjoy">Twitter</a> – <a href="https://codepen.io/gazjoy/">CodePen</a></p>
-                
+
+                <div class="container">
+                    <small><p><span class="emoji">⚠️ Warning:</span>
+                        This website will look broken as I am currently updating it.</p>
+                    </small>
+                </div>
                 <a href="#top" class="gj-top">Skip to top</a>
                 
             </div>

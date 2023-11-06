@@ -1,0 +1,30 @@
+/*
+Timeline
+*/
+.gj-timeline {
+    border-left: 2px solid var(--light);
+    list-style-type: none;
+    padding: 0;
+  }
+  .gj-timeline em {
+    color: var(--light);
+    font-size: 80%;
+    font-style: normal;
+  }
+  
+  .gj-timeline li {
+    margin: 2em 0;
+    padding-left: 1.125em;
+    position: relative;
+    top: -0.6em;
+  }
+  
+  .gj-timeline li:before {
+    background-color: var(--light);
+    content: "";
+    height: 2px;
+    left: 0;
+    position: absolute;
+    top: 0.75em;
+    width: 10px;
+  }

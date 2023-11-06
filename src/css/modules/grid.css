@@ -1,0 +1,27 @@
+/* Grid */
+
+.container {
+    max-width: 60ch;
+}
+ 
+.insulate {
+    padding-bottom: var(--step-5);
+    padding-top: var(--step-5);
+}
+.insulate-top {
+    padding-top: var(--step-5);
+}  
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 0 2rem;
+    align-items: start;
+}
+  
+.wrapper-inner {
+    padding-left: 6vw;
+    padding-right: 6vw;
+    margin-left: auto;
+    margin-right: auto;
+}

@@ -2,12 +2,12 @@
 layout: layouts/base.html
 title: About Me
 eleventyNavigation:
-  key: About Me
-  order: 1
+  key: About
+  order: 2
 ---
 
 <h1>{{ title }}</h1>
-  <img alt="Me (Gaz Joyce) smiling, I am wearing a shirt and I have glasses, the photo is black and white." src="/img/gaz.jpeg" width="200" class="u-separator gj-profile u-space-px-xl-bottom" />
+  <img alt="Me (Gaz Joyce) smiling, I am wearing a shirt and I have glasses, the photo is black and white." src="/img/gaz.jpeg" width="200" class="gj-profile" />
 
   <p>My name is Gaz Joyce and I am from <a href="https://www.google.com/search?q=stafford+uk&rlz=1C5GCEM_enGB1043GB1043&oq=stafford+uk&gs_lcrp=EgZjaHJvbWUqCggAEAAY4wIYgAQyCggAEAAY4wIYgAQyBwgBEC4YgAQyDQgCEAAYgwEYsQMYgAQyBwgDEAAYgAQyBwgEEAAYgAQyBwgFEAAYgAQyDQgGEC4YrwEYxwEYgAQyBwgHEAAYgAQyBwgIEAAYgAQyBwgJEAAYgATSAQgyMTIxajBqN6gCALACAA&sourceid=chrome&ie=UTF-8">Stafford, UK</a>. I work at <a href="https://www.valtech.com">Valtech</a> in the UK. </p>
   <p>

@@ -1,0 +1,59 @@
+
+/*
+Header, navigation, skip link
+*/
+.gj-header__nav {
+    display: flex;
+  }
+  .gj-header__nav ul {
+    margin-left: 0;
+    margin-bottom: 0;
+  }
+  .gj-skip-link {
+    border: 0;
+    clip-path: inset(50%);
+    display: inline-block;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    width: 1px;
+    white-space: nowrap;
+    position: absolute;
+    z-index: 11;
+  }
+  @media (min-width: 52em) {
+    .gj-skip-link:focus {
+      clip: auto;
+      clip-path: none;
+      height: auto;
+      overflow: visible;
+      width: auto;
+      white-space: inherit;
+      background-color: var(--light);
+      color: var(--dark);
+      padding: 10px 1em;
+    }
+  }
+
+  .nav-item-active a {
+    text-decoration: none;
+  }
+  .nav-item a {
+    position: relative;
+  }
+  .nav-item a:after {
+      content: "";
+      display: none;
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      bottom: -14px;
+      left: 50%;
+      margin-left: -5px;
+      background-color: var(--light);
+      border-radius: 100%;
+  }
+  .nav-item-active a:after {
+    display: block;
+  }
