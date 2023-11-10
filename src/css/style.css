@@ -170,19 +170,21 @@ html:after {
   width: 10px;
   height: 10px;
   position: absolute;
-  top: calc(var(--step-5) + 1rem);
-  right: 4rem;
+  top: calc(var(--step-5) + .75rem);
+  right: 2vw;
   left: auto;
   bottom: auto;
   background-color: var(--light);
   border-radius: 10px;
+  min-width: 10px;
 }
 html:after {
 
 }
 html:before {
-  right: 6rem;
-  width: 88px;
+  right: 6vw;
+  width: 4vw;
+  min-width: 25px;
 }
 
 .gj-cta::after {
