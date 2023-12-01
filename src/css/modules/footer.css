@@ -17,3 +17,7 @@ Footer & top link
   .gj-footer small span {
     color: var(--light);
   }
+
+  .carbonbadge {
+    text-align: left;
+  }
