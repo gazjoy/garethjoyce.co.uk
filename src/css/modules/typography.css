@@ -34,14 +34,16 @@
   
   body {
     font-size: var(--step-0);
+    /* line-height: 1.2; */
   }
-  h1,
-  h2,
-  h3,
-  h4 {
+  h1,.h1,
+  h2,.h2,
+  h3,.h3,
+  h4,.h4,
+  h5,.h5 { 
     font-weight: 900;
     line-height: 1.2;
-    margin: 0.5em 0;
+    margin: 0.5em 0 1em 0;
   }
   
   h1,
@@ -99,13 +101,7 @@
     border-left: 10px solid var(--theme-on-bg);
     font-style: italic;
     margin-left: 0;
-    padding-left: 1.4rem;
-  }
-  
-  @media (min-width: 62em) {
-    blockquote {
-        margin-left: -2em;
-    }
+    padding-left: var(--space-3);
   }
 
   dl, ol, p, ul {
@@ -155,4 +151,8 @@
 
 .emoji {
   font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+}
+
+.lead {
+  font-size: var(--step-3)
 }

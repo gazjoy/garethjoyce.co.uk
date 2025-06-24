@@ -23,7 +23,7 @@
         <main id="main-content" class="wrapper">
    
             <div class="wrapper-inner">
-                <div class="container">
+                <div class="{{ containerClasses | default('') }}">
                     {% if backLink %}
                     <div>
                         <p><a href="javascript:window.history.back()" class="gj-back-link">&larr; Back</a></p>
@@ -48,7 +48,7 @@
                 </ul>
                 
 
-                <p>© Gaz Joyce – <a href="https://www.twitter.com/gazjoy">Twitter</a> – <a href="https://codepen.io/gazjoy/">CodePen</a></p>
+                <p>© Gaz Joyce – <a href="https://github.com/gazjoy">GitHub</a> – <a href="https://codepen.io/gazjoy/">CodePen</a></p>
 
                 <div class="container">
                     <small><p><span class="emoji">⚠️ Warning:</span>

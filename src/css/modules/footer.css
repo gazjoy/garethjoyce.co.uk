@@ -4,7 +4,9 @@ Footer & top link
 */
 .gj-footer {
     font-size: 80%;
-    /* border-top: 2px solid green; */
+    margin-top: var(--space-5);
+    /* background-color: var(--dark); */
+    /* border-top: 20px solid var(--dark); */
   }
   .gj-top {
     margin-top: var(--space-4);
@@ -18,6 +20,6 @@ Footer & top link
     color: var(--light);
   }
 
-  .carbonbadge {
+  .gj-footer #wcb.carbonbadge {
     text-align: left;
   }

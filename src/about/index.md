@@ -4,6 +4,7 @@ title: About Me
 eleventyNavigation:
   key: About
   order: 2
+containerClasses: container
 ---
 
 <h1>{{ title }}</h1>
@@ -18,9 +19,9 @@ eleventyNavigation:
     I enjoy simplifying complex problems by <strong><em>listening</em></strong> to opinion and 
     <strong><em>questioning</em></strong> reasoning.</p>
 
-   <hr>
+
   <p><a href="/about/experience">Find out more about my professional experience →</a></p>
-   <hr>
+
 
   <p>Previously, I worked at <a href="https://www.iweb.co.uk">iWeb</a> in Stafford where I helped design and 
   make Magento and WordPress managed, brochure and e-commerce products.</p>

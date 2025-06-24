@@ -22,6 +22,7 @@ hr {
   border: 0;
   height: var(--thin);
   margin: var(--space-4) 0;
+  background-color: var(--light);
 }
 
 /* Theme */
@@ -138,9 +139,6 @@ h1 {
 a {
   color: var(--light);
 }
-hr {
-  background-color: var(--dark);
-}
 
 .swatch {
   width: 3em;
@@ -161,6 +159,37 @@ hr {
 }
 .bg-slate {
   background-color: var(--slate);
+}
+
+.bg-light-pink {
+  background-color: #f5e2eb;
+}
+.bg-primary-pink {
+  background-color: #d53880;
+}
+.bg-primary-dark-pink {
+  background-color: #b33377;
+}
+.bg-primary-darker-pink {
+  background-color: #981c57;
+}
+.bg-primary-darkest-pink {
+  background-color: #6b103c;
+}
+.bg-neutral-lightest {
+  background-color: #f7f7f7;
+}
+.bg-neutral-darkest {
+  background-color: #2e343b;
+}
+.bg-primary-focus {
+  background-color: #ffbf47;
+}
+.text-neutral-white {
+  color: white;
+} 
+.text-neutral-black {
+  color: black;
 }
 
 html:before,
@@ -196,6 +225,8 @@ html:before {
 
 .gj-profile {
   margin-bottom: 1rem;
+  border-radius: 100px;
+  overflow: hidden;
 }
 
 @media (min-width: 35em) {

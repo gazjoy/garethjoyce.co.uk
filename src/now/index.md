@@ -4,21 +4,22 @@ title: What I’m doing now
 eleventyNavigation:
   key: Now
   order: 3
+containerClasses: container
 ---
 
 <h1>{{ title }}</h1>
 
 <p>I am currently:</p>
 <ul>
-  <li>Updating this website</li>
-  <li>Trying to say "no" more</li>
+  <li>Always seem to be updating this website</li>
+  <li>Busy, busy digging into large knotty problems on the Apply for a Blue Badge service for The Department for Transport</li>
   <li>Prioritising family time</li>
   <li>Focussing on my mental health</li>
-  <li>Decorating my son's newly insulated, warm bedroom</li>
+  <li>Decorating my renovated 1930's home</li>
   <li>Spending a lot of time with my dog</li>
-  <li>Starting <a href="/running">running</a> again, building up slowly</li>
+  <li>Lots more <a href="/running">running</a> again, keeping it tentative</li>
   <li><a href="/reading">Reading a few books</a></li>
-  <li>Helping to run our accessibility design craft circle of practice at Valtech</li>
+  <li>Taking a burnout break from running accessibility craft circle of practice at Valtech</li>
 </ul>
 
 <hr>
