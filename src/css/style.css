@@ -76,7 +76,8 @@ hr {
   body {
     background-color: var(--theme-bg);
     color: var(--theme-on-bg);
-    font-family: monaco,Consolas,Lucida Console,monospace; 
+    font-family: "IBM Plex Mono", monospace;
+    /* font-family: monaco,Consolas,Lucida Console,monospace;  */
   }
 
 
@@ -92,26 +93,22 @@ hr {
       content: "";
       position: fixed;
       z-index: 10;
-      background-color: var(--dark);
-      display: none;
+      background-color: var(--light);
+      /* display: none; */
     }
   }
   html {
     &::before,
     &::after {
-      height: var(--thick);
+      height: var(--thin);
+      left: 0;
+      right: 0;
     }
     &::before {
       top: 0;
-      left: 0;
-      right: 0;
-      background-color: var(--light);
-      display: block;
     }
     &::after {
       bottom: 0;
-      left: 0;
-      right: 0;
     }
   }
   
@@ -119,16 +116,14 @@ hr {
   
     &::before,
     &::after {
-      width: var(--frame-size);
+      width: var(--thin);
+      top: 0;
+      bottom: 0;
     }
     &::before {
-      top: 0;
       left: 0;
-      bottom: 0;
     }
     &::after {
-      top: 0;
-      bottom: 0;
       right: 0;
     }
   }
@@ -194,29 +189,7 @@ a {
   color: black;
 }
 
-html:before,
-html:after {
-  content: "";
-  display: block;
-  width: 10px;
-  height: 10px;
-  position: absolute;
-  top: calc(var(--step-5) + .75rem);
-  right: 2vw;
-  left: auto;
-  bottom: auto;
-  background-color: var(--light);
-  border-radius: 10px;
-  min-width: 10px;
-}
-html:after {
 
-}
-html:before {
-  right: 6vw;
-  width: 4vw;
-  min-width: 25px;
-}
 
 .gj-cta::after {
   content: " →";
@@ -239,3 +212,4 @@ html:before {
       margin-left: 2rem;
   }
 }
+

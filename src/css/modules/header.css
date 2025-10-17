@@ -39,6 +39,7 @@ Header, navigation, skip link
   .nav-item-active a {
     text-decoration: none;
   }
+
   .nav-item a {
     position: relative;
   }
@@ -52,7 +53,7 @@ Header, navigation, skip link
       left: 50%;
       margin-left: -5px;
       background-color: var(--light);
-      border-radius: 100%;
+      /* border-radius: 100%; */
   }
   .nav-item-active a:after {
     display: block;
