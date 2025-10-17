@@ -35,6 +35,8 @@ hr {
     --slate: #376e6f;
     --dull: #1c3334;
 
+    --tange: #e06016;
+
     color-scheme: light;
     --theme-bg: #fafafa;
     --theme-on-bg: var(--dark);
