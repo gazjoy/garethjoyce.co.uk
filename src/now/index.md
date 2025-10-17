@@ -5,6 +5,7 @@ eleventyNavigation:
   key: Now
   order: 3
 containerClasses: container
+date: Last Modified
 ---
 
 <h1>{{ title }}</h1>
@@ -17,9 +18,8 @@ containerClasses: container
   <li>Focussing on my mental health</li>
   <li>Decorating my renovated 1930's home</li>
   <li>Spending a lot of time with my dog</li>
-  <li>Lots more <a href="/running">running</a> again, keeping it tentative</li>
+  <li>More <a href="/running">running</a> again, keeping it tentative, getting back issues from time to time</li>
   <li><a href="/reading">Reading a few books</a></li>
-  <li>Taking a burnout break from running accessibility craft circle of practice at Valtech</li>
 </ul>
 
 <hr>
